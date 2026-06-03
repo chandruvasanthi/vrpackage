@@ -1,0 +1,29 @@
+
+
+:root {
+
+  --primary-color: #f59e0b;
+  --primary-dark: #d97706;
+
+  --secondary-color: #0f172a;
+
+  --white-color: #ffffff;
+
+  --light-bg: #f8fafc;
+
+  --gray-color: #64748b;
+
+  --light-gray: #cbd5e1;
+
+  --border-color: rgba(255,255,255,0.1);
+
+  --shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+
+  --transition: 0.4s ease;
+
+  --radius: 20px;
+
+  --container-width: 1400px;
+
+}

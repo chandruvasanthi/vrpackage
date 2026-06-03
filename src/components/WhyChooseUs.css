@@ -1,0 +1,280 @@
+.why-choose {
+  width: 100%;
+  background: #000;
+  padding: 100px 8%;
+}
+
+.why-choose .heading {
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.choose-subtitle {
+  text-align: center;
+  color: #64748b;
+  font-size: 1.2rem;
+  letter-spacing: 4px;
+  margin-bottom: 60px;
+  text-transform: uppercase;
+}
+
+.choose-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.choose-card {
+  background: #111;
+  border: 2px solid rgb(68,26,11);
+  border-radius: 20px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: 0.5s;
+  position: relative;
+  overflow: hidden;
+}
+
+.choose-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgb(242,93,41);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.choose-card:hover::before {
+  opacity: 0.08;
+}
+
+.choose-card:hover {
+  transform: translateY(-10px);
+  border-color: rgb(242,93,41);
+  box-shadow: 0 15px 40px rgba(250,204,21,0.12);
+}
+
+.choose-icon {
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  border-radius: 50%;
+  border: 3px solid rgb(242,93,41);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(242,93,41);
+  font-size: 2rem;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+  transition: 0.5s;
+}
+
+.choose-card:hover .choose-icon {
+  background: rgb(242,93,41);
+  color: black;
+  transform: rotateY(180deg);
+}
+
+.choose-card h3 {
+  color: rgb(255,255,255);
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.choose-card p {
+  color: #d1d5db;
+  line-height: 1.7;
+  font-size: 0.95rem;
+  position: relative;
+  z-index: 1;
+}
+
+.bottom-banner {
+  margin-top: 60px;  
+  background: rgb(242,93,41); 
+  color: white;
+  text-align: center;
+  padding: 18px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 6px;
+  clip-path: polygon( 3% 0%, 100% 0%, 97% 100%, 0% 100% );
+}
+
+@media (max-width: 1440px) {
+  .why-choose {
+    padding: 100px 6%;
+  }
+  .why-choose .heading {
+    font-size: 3rem;
+  }
+  .choose-grid {
+    gap: 22px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .why-choose {
+    padding: 90px 5%;
+  }
+  .why-choose .heading {
+    font-size: 2.6rem;
+  }
+  .choose-subtitle {
+    font-size: 1rem;
+    margin-bottom: 50px;
+  }
+  .choose-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .choose-card {
+    padding: 25px 18px;
+  }
+  .choose-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 1.8rem;
+  }
+  .choose-card h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-choose {
+    padding: 80px 5%;
+  }
+  .why-choose .heading {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+  .choose-subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+  }
+  .choose-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  .choose-card {
+    padding: 22px 16px;
+  }
+  .choose-icon {
+    width: 65px;
+    height: 65px;
+    font-size: 1.6rem;
+  }
+  .choose-card h3 {
+    font-size: 1.1rem;
+  }
+  .choose-card p {
+    font-size: 0.85rem;
+  }
+  .bottom-banner {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 425px) {
+  .why-choose {
+    padding: 70px 4%;
+  }
+  .why-choose .heading {
+    font-size: 1.9rem;
+  }
+  .choose-subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 35px;
+  }
+  .choose-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .choose-card {
+    padding: 24px 18px;
+  }
+  .choose-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+  .choose-card h3 {
+    font-size: 1rem;
+  }
+  .choose-card p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+  .bottom-banner {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    padding: 14px;
+  }
+}
+
+@media (max-width: 375px) {
+  .why-choose .heading {
+    font-size: 1.7rem;
+  }
+  .choose-card {
+    padding: 20px 15px;
+  }
+  .choose-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 1.3rem;
+  }
+  .choose-card h3 {
+    font-size: 0.95rem;
+  }
+  .choose-card p {
+    font-size: 0.8rem;
+  }
+  .bottom-banner {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .why-choose {
+    padding: 60px 4%;
+  }
+  .why-choose .heading {
+    font-size: 1.5rem;
+  }
+  .choose-subtitle {
+    font-size: 0.75rem;
+    margin-bottom: 30px;
+  }
+  .choose-card {
+    padding: 18px 14px;
+  }
+  .choose-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+  .choose-card h3 {
+    font-size: 0.9rem;
+  }
+  .choose-card p {
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+  .bottom-banner {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    padding: 12px;
+  }
+}

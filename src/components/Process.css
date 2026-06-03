@@ -1,0 +1,271 @@
+.process-section {
+  width: 100%;
+  padding: 120px 6%;
+  background:
+  radial-gradient(circle at top left, rgba(242,93,41,0.12), transparent 30%),
+  #050505;
+  overflow: hidden;
+}
+
+.process-heading {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.process-heading h2 {
+  color: white;
+  font-size: 3rem;
+}
+
+.horizontal-scroll {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.process-track {
+  display: flex;
+  gap: 22px;
+  width: max-content;
+  display: flex;
+  align-items: stretch;
+  gap: 22px;
+  width: max-content;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.process-card {
+  width: 320px;
+  min-height: 240px;
+  padding: 28px;
+  border-radius: 28px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  background:
+  linear-gradient( 145deg, rgba(18,18,18,0.98), rgba(32,32,32,0.95));
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(10px);
+  transition: 0.5s;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+.process-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(242,93,41,0.5);
+  box-shadow: 0 20px 45px rgba(242,93,41,0.12);
+}
+
+.card-number {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: rgba(255,255,255,0.05);
+}
+
+.card-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(  135deg, rgb(242,93,41),  rgb(255,140,60));
+  color: white;
+  font-size: 1.4rem;
+  margin-bottom: 22px;
+  box-shadow: 0 10px 25px rgba(242,93,41,0.25);
+  transition: 0.4s;
+}
+
+.process-card:hover .card-icon {
+  transform: rotateY(180deg) scale(1.08);
+}
+
+.process-card h3 {
+  color: white;
+  font-size: 1.3rem;
+  margin-bottom: 14px;
+}
+
+.process-card p {
+  color: #cbd5e1;
+  line-height: 1.7;
+  font-size: 0.9rem;
+}
+
+.card-glow {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background:rgba(242,93,41,0.12);
+  top: -70px;
+  right: -70px;
+  filter: blur(30px);
+}
+
+ @media (max-width: 1440px) {
+  .process-section {
+    padding: 110px 6%;
+  }
+  .process-heading h2 {
+    font-size: 2.8rem;
+  }
+  .process-card {
+    width: 300px;
+    min-height: 230px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .process-section {
+    padding: 100px 5%;
+  }
+  .process-heading {
+    margin-bottom: 60px;
+  }
+  .process-heading h2 {
+    font-size: 2.5rem;
+  }
+  .process-card {
+    width: 280px;
+    min-height: 220px;
+    padding: 25px;
+  }
+  .card-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 1.2rem;
+  }
+  .card-number {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .process-section {
+    padding: 80px 5%;
+  }
+  .process-heading {
+    margin-bottom: 50px;
+  }
+  .process-heading h2 {
+    font-size: 2rem;
+  }
+  .process-track {
+    gap: 18px;
+  }
+  .process-card {
+    width: 240px;
+    min-height: 210px;
+    padding: 22px;
+  }
+  .card-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+  }
+  .card-number {
+    font-size: 2.5rem;
+  }
+  .process-card h3 {
+    font-size: 1.1rem;
+  }
+  .process-card p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 425px) {
+  .process-section {
+    padding: 70px 4%;
+  }
+  .process-heading h2 {
+    font-size: 1.8rem;
+  }
+  .process-track {
+    gap: 15px;
+  }
+  .process-card {
+    width: 220px;
+    min-height: 200px;
+    padding: 20px;
+  }
+  .card-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+  .card-number {
+    font-size: 2.2rem;
+  }
+  .process-card h3 {
+    font-size: 1rem;
+  }
+  .process-card p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .process-heading h2 {
+    font-size: 1.6rem;
+  }
+  .process-card {
+    width: 200px;
+    min-height: 190px;
+    padding: 18px;
+  }
+  .card-number {
+    font-size: 2rem;
+  }
+  .process-card h3 {
+    font-size: 0.95rem;
+  }
+  .process-card p {
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 320px) {
+  .process-section {
+    padding: 60px 4%;
+  }
+  .process-heading {
+    margin-bottom: 40px;
+  }
+  .process-heading h2 {
+    font-size: 1.4rem;
+  }
+  .process-card {
+    width: 180px;
+    min-height: 180px;
+    padding: 16px;
+  }
+  .card-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+  .card-number {
+    font-size: 1.8rem;
+    top: 15px;
+    right: 15px;
+  }
+  .process-card h3 {
+    font-size: 0.9rem;
+  }
+  .process-card p {
+    font-size: 0.7rem;
+    line-height: 1.4;
+  }
+}
