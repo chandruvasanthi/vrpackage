@@ -250,7 +250,7 @@
 
 @media (min-width: 425px) and (max-width: 510px) {
   .all-products-grid {
-    grid-template-columns: 1fr;
+     grid-template-columns: 1fr !important;
     gap: 20px;
   }
   .industries-grid{
@@ -263,7 +263,7 @@
     padding: 90px 4% 70px;
   }
   .all-products-grid {
-    grid-template-columns: 1fr;
+     grid-template-columns: 1fr !important;
   }
   .all-products-heading, .industries-section h2, .quote-cta h2 {
     font-size: 1.8rem;
@@ -304,7 +304,7 @@
 
 @media (max-width: 375px) {
    .all-products-grid {
-    grid-template-columns: 1fr;
+     grid-template-columns: 1fr !important;
   }
   .all-products-heading,.industries-section h2, .quote-cta h2 {
     font-size: 1.6rem;
@@ -332,7 +332,7 @@
     padding: 80px 4% 60px;
   }
    .all-products-grid {
-    grid-template-columns: 1fr;
+     grid-template-columns: 1fr !important;
   }
   .all-products-heading, .industries-section h2, .quote-cta h2 {
     font-size: 1.4rem;
