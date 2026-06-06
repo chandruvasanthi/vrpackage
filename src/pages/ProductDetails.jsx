@@ -75,7 +75,7 @@ function ProductDetails() {
           </div>
 
         </div>
-         <HashLink smooth  to="/#top" className="bthbtn"> <span> <IoHomeSharp /> </span></HashLink> 
+         {/* <HashLink smooth  to="/#top" className="bthbtn"> <span> <IoHomeSharp /> </span></HashLink>  */}
       </section>
 
       <Footer />
