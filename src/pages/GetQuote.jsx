@@ -50,10 +50,13 @@ function GetQuote() {
 
           </div>
 
-          <HashLink smooth to='/#contact'>
+          {/* <HashLink smooth to='/#contact'>
             <button className='quote-btn'> Request Free Quote </button>
-          </HashLink>
-
+          </HashLink> */}
+           
+            <a href='https://wa.me/916381506536'   target="_blank" rel="noopener noreferrer">
+                 <button className='quote-btn'> Request Free Quote </button>
+            </a>
         </div>
 
       </div>

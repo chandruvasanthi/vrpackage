@@ -95,37 +95,41 @@
   box-shadow: 0 10px 25px rgba(242,93,41,0.3);
 }
 
-.industries-section {
-  padding: 0 8% 100px;
-  text-align: center;
+.industries-section{
   margin-top: 100px;
+  text-align: center;
+  padding: 0 8% 100px;
 }
 
-.industries-section h2 {
-  color: white;
+.industries-section h2{
   font-size: 3rem;
   margin-bottom: 60px;
+  background: linear-gradient( 135deg, #ffffff 0%,  #ffffff 35%,  rgb(255,140,60) 65%,  rgb(242,93,41) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.industries-grid {
+.industries-grid{
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  grid-template-columns: repeat(3,1fr);
   gap: 25px;
 }
 
-.industry-box {
+.industry-box{
   padding: 28px;
-  background: linear-gradient( 145deg,#171717,#1f1f1f);
+  background: linear-gradient( 145deg, #111, #1a1a1a );
+  border: 1px solid rgba(242,93,41,0.15);
   border-radius: 18px;
-  border: 1px solid rgba(255,255,255,0.08);
   color: white;
   font-weight: 600;
-  transition: 0.4s;
+  transition: .4s;
 }
 
-.industry-box:hover {
-  background: rgb(242,93,41);
+.industry-box:hover{
   transform: translateY(-8px);
+  border-color: rgb(242,93,41);
+  box-shadow: 0 15px 30px rgba(242,93,41,0.15);
 }
 
 .quote-cta {
@@ -167,7 +171,6 @@
   color: white;
 }
 
-
 @media (max-width: 1440px) {
   .all-products {
     padding: 130px 6% 90px;
@@ -181,6 +184,9 @@
   .quote-cta h2 {
     font-size: 2.8rem;
   }
+  .industries-section h2{
+    font-size: 2.8rem;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -191,11 +197,13 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
   }
-  .industries-grid {
-    grid-template-columns: repeat(3, 1fr);
+ .industries-grid{
+    grid-template-columns: repeat(2,1fr);
+  }
+  .industries-section h2{
+    font-size: 2.5rem;
   }
   .all-products-heading,
-  .industries-section h2,
   .quote-cta h2 {
     font-size: 2.5rem;
   }
@@ -212,13 +220,19 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
-  .industries-grid {
-    grid-template-columns: repeat(2, 1fr);
+   .industries-section{
+    margin-top: 80px;
+    padding: 0 5% 80px;
+  }
+  .industries-grid{
+    grid-template-columns: repeat(2,1fr);
     gap: 20px;
   }
-  .all-products-heading,
-  .industries-section h2,
-  .quote-cta h2 {
+  .industries-section h2{
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  .all-products-heading,.quote-cta h2 {
     font-size: 2rem;
   }
   .all-products-text,
@@ -240,7 +254,7 @@
     gap: 20px;
   }
   .industries-grid{
-     grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 }
 
@@ -248,13 +262,10 @@
   .all-products {
     padding: 90px 4% 70px;
   }
-  .all-products-grid,
-  .industries-grid {
+  .all-products-grid,.industries-grid {
     grid-template-columns: 1fr;
   }
-  .all-products-heading,
-  .industries-section h2,
-  .quote-cta h2 {
+  .all-products-heading, .industries-section h2, .quote-cta h2 {
     font-size: 1.8rem;
   }
   .all-products-text {
@@ -267,23 +278,32 @@
   .all-product-content {
     padding: 16px;
   }
-  .industry-box {
-    padding: 22px;
+   .industries-section{
+    margin-top: 70px;
+    padding: 0 4% 70px;
+  }
+  .industries-grid{
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .industries-section h2{
+    font-size: 1.8rem;
+    margin-bottom: 35px;
+  }
+  .industry-box{
+    padding: 20px;
   }
   .quote-cta {
     padding: 50px 20px;
     border-radius: 20px;
   }
-  .cta-btn,
-  .product-btn {
+  .cta-btn, .product-btn {
     width: 100%;
   }
 }
 
 @media (max-width: 375px) {
-  .all-products-heading,
-  .industries-section h2,
-  .quote-cta h2 {
+  .all-products-heading,.industries-section h2, .quote-cta h2 {
     font-size: 1.6rem;
   }
   .all-product-card img {
@@ -295,19 +315,23 @@
   .all-product-content p {
     font-size: 0.8rem;
   }
+  .industries-section h2{
+    font-size: 1.6rem;
+  }
+  .industry-box{
+    padding: 18px;
+    font-size: 0.95rem;
+  }
 }
 
 @media (max-width: 320px) {
   .all-products {
     padding: 80px 4% 60px;
   }
-  .all-products-heading,
-  .industries-section h2,
-  .quote-cta h2 {
+  .all-products-heading, .industries-section h2, .quote-cta h2 {
     font-size: 1.4rem;
   }
-  .all-products-text,
-  .quote-cta p {
+  .all-products-text,.quote-cta p {
     font-size: 0.8rem;
   }
   .all-product-card img {
@@ -316,8 +340,11 @@
   .all-product-content {
     padding: 14px;
   }
-  .industry-box {
-    padding: 18px;
+ .industries-section h2{
+    font-size: 1.4rem;
+  }
+  .industry-box{
+    padding: 16px;
     font-size: 0.9rem;
   }
   .cta-btn,

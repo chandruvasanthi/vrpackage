@@ -150,6 +150,9 @@
   .product-card img {
     height: 220px;
   }
+  .product-card:hover img {
+    transform: none;
+  }
   .product-content {
     padding: 16px;
   }

@@ -45,13 +45,10 @@ function Navbar() {
           <HashLink smooth to='/#process' onClick={() => setMenuOpen(false)}>  Process </HashLink>
         </li>
         <li>
-          <HashLink smooth to='/#gallery'  onClick={() => setMenuOpen(false)} > Gallery </HashLink>
+          <HashLink smooth to='/#contact'  onClick={() => setMenuOpen(false)} > Contact </HashLink>
         </li>
-
-        
-
         <li>
-          <HashLink smooth to='/#contact' onClick={() => setMenuOpen(false)}> Contact </HashLink>
+          <HashLink smooth to='/#faq' onClick={() => setMenuOpen(false)}> FAQ's </HashLink>
         </li>
 
       </ul>

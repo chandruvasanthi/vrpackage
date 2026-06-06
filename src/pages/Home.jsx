@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async'
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
-import About from '../components/About'
-import Products from '../components/Products'
-import Process from '../components/Process'
-import Gallery from '../components/Gallery'
-import WhyChoose from '../components/WhyChooseUs'
-import WhatsApp from '../components/WhatsApp'
-import Contact from '../components/Contact'
-import Faq from '../components/Faq';
-import Footer from '../components/Footer'
+
+
+const About = lazy(() => import('../components/About'));
+const MissionVision = lazy(() => import('../components/MissionVision'));
+const Products = lazy(() => import('../components/Products'));
+const Process = lazy(() => import('../components/Process'));
+const Gallery = lazy(() => import('../components/Gallery'));
+const WhyChoose = lazy(() => import('../components/WhyChooseUs'));
+const Contact = lazy(() => import('../components/Contact'));
+const Faq = lazy(() => import('../components/Faq'));
+const WhatsApp = lazy(() => import('../components/WhatsApp'));
+const Footer = lazy(() => import('../components/Footer'));
 
 function Home() {
   return (
@@ -27,9 +30,10 @@ function Home() {
       <Navbar />
       <Hero />
       <About />
+      <MissionVision />
       <Products />
       <Process />
-      <Gallery />
+      {/* <Gallery /> */}
       <WhyChoose />
       <Contact />
       <Faq />

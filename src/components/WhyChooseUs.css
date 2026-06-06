@@ -45,14 +45,14 @@
   transition: 0.5s;
 }
 
-.choose-card:hover::before {
+/* .choose-card:hover::before {
   opacity: 0.08;
-}
+} */
 
 .choose-card:hover {
   transform: translateY(-10px);
-  border-color: rgb(242,93,41);
-  box-shadow: 0 15px 40px rgba(250,204,21,0.12);
+  /* border-color: rgb(242,93,41);
+  box-shadow: 0 15px 40px rgba(250,204,21,0.12); */
 }
 
 .choose-icon {
@@ -61,6 +61,7 @@
   margin: auto;
   border-radius: 50%;
   border: 3px solid rgb(242,93,41);
+    /* border: 1px solid rgba(242,93,41,0.2); */
   display: flex;
   justify-content: center;
   align-items: center;

@@ -35,9 +35,12 @@ function AllProducts() {
                 <div className='all-product-content'>
                    <h3> {item.title} </h3>
                    {<p> {item.description}</p> }
-                    <HashLink smooth to='/#contact'>
-                       <button className='product-btn'>  Get Quote{/* {item.button} */}</button>
-                    </HashLink>
+                    {/* <HashLink smooth to='/#contact'>
+                       <button className='product-btn'>  Get Quote</button>
+                    </HashLink> */}
+                    <HashLink smooth to={`/product/${item.slug}`} > 
+                       <button className="product-btn"> Explore </button>
+                     </HashLink>
                 </div>
 
               </div>
@@ -69,9 +72,10 @@ function AllProducts() {
             Get high-quality corrugated boxes manufactured according to
             your exact business requirements.
           </p>
-          <HashLink smooth to='/#contact'>
-            <button className='cta-btn'>  Request a Quote </button>
-          </HashLink>
+      
+           <a href='https://wa.me/916381506536'  target="_blank" rel="noopener noreferrer"  >
+                  <button className='cta-btn'>  Request a Quote </button>
+            </a>
         </div>
       </section>
 
