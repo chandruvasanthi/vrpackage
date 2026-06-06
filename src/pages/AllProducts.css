@@ -262,7 +262,7 @@
   .all-products {
     padding: 90px 4% 70px;
   }
-  .all-products-grid,.industries-grid {
+  .all-products-grid {
     grid-template-columns: 1fr;
   }
   .all-products-heading, .industries-section h2, .quote-cta h2 {
@@ -303,6 +303,9 @@
 }
 
 @media (max-width: 375px) {
+   .all-products-grid {
+    grid-template-columns: 1fr;
+  }
   .all-products-heading,.industries-section h2, .quote-cta h2 {
     font-size: 1.6rem;
   }
@@ -327,6 +330,9 @@
 @media (max-width: 320px) {
   .all-products {
     padding: 80px 4% 60px;
+  }
+   .all-products-grid {
+    grid-template-columns: 1fr;
   }
   .all-products-heading, .industries-section h2, .quote-cta h2 {
     font-size: 1.4rem;
