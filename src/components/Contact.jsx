@@ -84,7 +84,7 @@ function Contact() {
 
                 {/* <a href='mailto:vrpackageboxes@gmail.com'> */}
                 <a href='mailto:chandrutas007@gmail.com'>
-                  <p> vrpackageboxes@gmail.com </p>
+                  <p> vrpackageofficial@gmail.com </p>
                 </a>
               </div>
             </div>

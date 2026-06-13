@@ -8,12 +8,12 @@ function Process() {
 
     <section className='process-section' id='process'>
       <div className='process-heading'>
-        <h2>  Manufacturing Process </h2>
+        <h2> Our Process </h2>
        </div>
 
       <div className='horizontal-scroll'>
 
-        <motion.div
+        {/* <motion.div
           className='process-track'
           animate={{
     x: ['0px', '-1800px']
@@ -27,8 +27,20 @@ function Process() {
       ease: 'linear'
     }
   }}
-        >
+        > */}
 
+
+<motion.div
+  className='process-track'
+  animate={{
+    x: ['0%', '-50%']
+  }}
+  transition={{
+    duration: 32,
+    ease: 'linear',
+    repeat: Infinity,
+  }}
+>
           {/* FIRST SET */}
 
           {processData.map((item) => (

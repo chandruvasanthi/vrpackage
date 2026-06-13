@@ -39,7 +39,10 @@ function Footer() {
             {/* <a href='#'> <FaFacebookF /></a> */}
             <a href='#'><FaInstagram /> </a>
             {/* <a href='#'><FaLinkedinIn /> </a> */}
-            <a href='https://wa.me/916381506536'><FaWhatsapp /> </a>
+
+            <a href='https://wa.me/916381506536' target='_blank' rel='noopener noreferrer' >
+               <FaWhatsapp />
+             </a>
            </div>
 
         </div>
@@ -53,19 +56,40 @@ function Footer() {
           <a href='#contact'>Contact</a>
       </div>
 
-        <div className='footer-links'>
-          <h3>Our Products</h3>
-          <a href='#'>Corrugated Boxes</a>
-          <a href='#'>Printed Boxes</a>
-          <a href='#'>Heavy Duty Boxes</a>
-          <a href='#'>Corrugated Rolls</a>
-          <a href='#'>Corrugated Sheets</a>
-        </div>
+      
+
+<div className="footer-links">
+  <h3>Our Products</h3>
+
+  <Link to="/product/corrugated-boxes">
+    Corrugated Boxes
+  </Link>
+
+  <Link to="/product/Printed Packaging Boxes">
+    Printed Boxes
+  </Link>
+
+  <Link to="/product/Heavy Duty Boxes">
+    Heavy Duty Boxes
+  </Link>
+
+  <Link to="/product/Corrugated Rolls">
+    Corrugated Rolls
+  </Link>
+
+  <Link to="/product/Corrugated Sheets">
+    Corrugated Sheets
+  </Link>
+</div>
 
         <div className='footer-contact'>
           <h3>Contact Info</h3>
-          <p> +91 6381506536 </p>
-          <p> vrpackageboxes@gmail</p>
+         <a href='tel:6381506536'> <p>  +91 6381506536 </p>  </a>
+
+            {/* <a href='mailto:vrpackageboxes@gmail.com'> */}
+          <a href='mailto:chandrutas007@gmail.com'>
+              <p> vrpackageofficial@gmail.com </p>
+          </a>
            <p> Salem, Tamil Nadu. </p>
         </div>
             

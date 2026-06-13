@@ -1,49 +1,39 @@
-import {FaPencilRuler,FaCut,FaPrint,FaBoxes,FaCheckCircle,FaTruck} from 'react-icons/fa'
+import {FaSearch, FaDraftingCompass,FaPencilRuler,FaCut,FaPrint,FaBoxes,FaCheckCircle,FaTruck} from 'react-icons/fa'
 
 const processData = [
-
   {
     id: 1,
-    icon: <FaPencilRuler />,
-    title: 'Design & Planning',
-    description:'Custom box designs are created based on customer requirements.'
+     icon: <FaSearch />,
+    title: 'Requirement Analysis',
+    description: 'Customer requirements are carefully analyzed.'
   },
 
   {
     id: 2,
-    icon: <FaCut />,
-    title: 'Sheet Cutting',
-    description:'Corrugated sheets are accurately cut into required sizes.'
+      icon: <FaDraftingCompass />,
+    title: 'Design & Planning',
+    description: 'Custom box designs are created based on project needs.'
   },
 
   {
     id: 3,
-    icon: <FaPrint />,
-    title: 'Printing Process',
-    description:'High-quality printing and branding are applied to the boxes.'
+    icon: <FaBoxes />,
+    title: 'Box Formation',
+    description: 'Boxes are manufactured and assembled with precision.'
   },
 
   {
     id: 4,
-    icon: <FaBoxes />,
-    title: 'Box Formation',
-    description:'Boxes are folded, pasted and assembled carefully.'
+    icon: <FaCheckCircle />,
+    title: 'Quality Check',
+    description: 'Every box is inspected to ensure quality standards.'
   },
 
   {
     id: 5,
-    icon: <FaCheckCircle />,
-    title: 'Quality Check',
-    description:'Every box is inspected to ensure premium quality standards.'
-  },
-
-  {
-    id: 6,
     icon: <FaTruck />,
-    title: 'Packaging & Delivery',
-    description:'Finished products are packed and delivered safely to clients.'
+    title: 'On-Time Delivery',
+    description: 'Orders are delivered safely within the committed timeline.'
   }
-
-]
-
+];
 export default processData;

@@ -50,6 +50,8 @@
   backdrop-filter: blur(10px);
   transition: 0.5s;
   box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .process-card:hover {
