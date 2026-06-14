@@ -13,34 +13,17 @@ function Process() {
 
       <div className='horizontal-scroll'>
 
-        {/* <motion.div
-          className='process-track'
-          animate={{
-    x: ['0px', '-1800px']
-  }}
-
-  transition={{
-    x: {
-      repeat: Infinity,
-      repeatType: 'loop',
-      duration: 32,
-      ease: 'linear'
-    }
-  }}
-        > */}
-
-
-<motion.div
-  className='process-track'
-  animate={{
-    x: ['0%', '-50%']
-  }}
-  transition={{
-    duration: 32,
-    ease: 'linear',
-    repeat: Infinity,
-  }}
->
+       
+    <motion.div className='process-track' animate={{
+        x: ['0%', '-50%']
+      }}
+        transition={{
+        duration: 32,
+        ease: 'linear',
+        repeat: Infinity,
+        }}
+    >
+      
           {/* FIRST SET */}
 
           {processData.map((item) => (

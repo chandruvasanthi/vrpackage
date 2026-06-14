@@ -28,6 +28,8 @@ function Home() {
       </Helmet>
 
       <Navbar />
+      
+      <main>
       <Hero />
       <About />
       <MissionVision />
@@ -38,6 +40,8 @@ function Home() {
       <Contact />
       <Faq />
       <WhatsApp />
+     </main>
+
       <Footer />
 
       </div>

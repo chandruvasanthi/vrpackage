@@ -40,7 +40,7 @@ function Footer() {
             <a href='#'><FaInstagram /> </a>
             {/* <a href='#'><FaLinkedinIn /> </a> */}
 
-            <a href='https://wa.me/916381506536' target='_blank' rel='noopener noreferrer' >
+            <a href='https://wa.me/916381506536' target='_blank' rel='noopener noreferrer'  aria-label="WhatsApp" >
                <FaWhatsapp />
              </a>
            </div>

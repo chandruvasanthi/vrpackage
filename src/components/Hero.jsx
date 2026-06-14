@@ -1,26 +1,32 @@
-import { image } from 'framer-motion/client'
 import './Hero.css'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import Heroimg1 from '../assets/Heroimg1.webp';
+import Heroimg2 from '../assets/Heroimg2.webp';
+import Heroimg3 from '../assets/Heroimg3.webp';
+
 
 function Hero() {
 
   const heroSlides = [
 
     {
-      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1400&auto=format&fit=crop',
+      // image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1400&auto=format&fit=crop',
+      image: Heroimg1,
       title: 'Premium Corrugated Box Manufacturing Solutions in Salem',
       description:'High-quality corrugated packaging boxes for ecommerce, industries and export businesses.'
     },
 
     {
-      image:'https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=1400&auto=format&fit=crop',
+      // image:'https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=1400&auto=format&fit=crop',
+      image: Heroimg2,
       title:'Strong & Secure Industrial Packaging',
       description:'Durable corrugated packaging solutions designed for safe transportation and storage.'
     },
 
     {
-     image:'https://i.ibb.co/pBFqX3JP/6d953a36-74af-4a0f-a890-e2e21556b71e.png',
+    //  image:'https://i.ibb.co/pBFqX3JP/6d953a36-74af-4a0f-a890-e2e21556b71e.png',
+      image: Heroimg3,
       title:'Custom Printed Corrugated Boxes',
       description:'Modern custom packaging and printed carton boxes for branding and retail packaging.'
     }
@@ -31,12 +37,13 @@ function Hero() {
   const [animate, setAnimate] = useState(true)
 
 
-  useEffect(() => {
-  heroSlides.forEach((slide) => {
-    const img = new Image();
-    img.src = slide.image;
-  });
-}, []);
+//   useEffect(() => {
+//   heroSlides.forEach((slide) => {
+//     const img = new Image();
+//     img.src = slide.image;
+//   });
+// }, []);
+
   useEffect(() => {
 
     const interval = setInterval(() => {
@@ -62,7 +69,8 @@ function Hero() {
   return (
 
     <section className='hero' id='home'
-
+      role="img"
+      aria-label={heroSlides[currentSlide].title}
       style={{
         backgroundImage: `linear-gradient( rgba(15,23,42,0.75), rgba(15,23,42,0.75)),
         url(${heroSlides[currentSlide].image})`
