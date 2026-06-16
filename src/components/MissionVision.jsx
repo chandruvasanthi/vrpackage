@@ -4,7 +4,6 @@ import { FaBullseye, FaEye } from "react-icons/fa";
 function MissionVision() {
   return (
     <section className="mission-vision">
-
       <div className="container">
 
         <h2 className="mv-heading">
@@ -17,7 +16,6 @@ function MissionVision() {
         </p>
 
         <div className="mv-grid">
-
           <div className="mv-card">
 
             <div className="mv-icon">
@@ -27,7 +25,7 @@ function MissionVision() {
             <h3>Our Mission</h3>
 
             <p>
-              To provide high-quality corrugated packaging solutions 
+              To provide high-quality corrugated packaging solutions
               that ensure product safety, timely delivery, and reliable,
               cost-effective packaging while maintaining customer satisfaction.
             </p>
@@ -43,9 +41,9 @@ function MissionVision() {
             <h3>Our Vision</h3>
 
             <p>
-             To be a trusted packaging partner known for  delivering sustainable, innovative,
-              and customer-focused packaging solutions that help
-              businesses grow with confidence.
+              To be a trusted packaging partner known for delivering
+              sustainable, innovative, and customer-focused packaging
+              solutions that help businesses grow with confidence.
             </p>
 
           </div>
@@ -53,7 +51,6 @@ function MissionVision() {
         </div>
 
       </div>
-
     </section>
   );
 }

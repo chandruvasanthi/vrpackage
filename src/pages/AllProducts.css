@@ -110,7 +110,7 @@
   background-clip: text;
 }
 
-.industries-grid{
+/* .industries-grid{
   display: grid;
   grid-template-columns: repeat(3,1fr);
   gap: 25px;
@@ -124,12 +124,97 @@
   color: white;
   font-weight: 600;
   transition: .4s;
+} */
+.industries-section {
+  margin-top: 100px;
+  text-align: center;
+  padding: 0 8% 100px;
 }
 
-.industry-box:hover{
-  transform: translateY(-8px);
-  border-color: rgb(242,93,41);
-  box-shadow: 0 15px 30px rgba(242,93,41,0.15);
+.industries-section h2 {
+  font-size: 3rem;
+  margin-bottom: 60px;
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #ffffff 35%,
+    rgb(255,140,60) 65%,
+    rgb(242,93,41) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.industries-slider-container {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.industries-slider-container::before,
+.industries-slider-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.industries-slider-container::before {
+  left: 0;
+  background: linear-gradient(to right, rgb(15,18,22), transparent);
+}
+
+.industries-slider-container::after {
+  right: 0;
+  background: linear-gradient(to left, rgb(15,18,22), transparent);
+}
+
+.industries-slider {
+  display: flex;
+  gap: 25px;
+  width: max-content;
+  white-space: nowrap;
+}
+
+.industries-slider span {
+  padding: 14px 20px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #111, #1a1a1a);
+  border: 1px solid rgba(242, 93, 41, 0.2);
+  color: #cbd5e1;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+.row-right {
+  animation: moveLeft 30s linear infinite;
+}
+.row-left {
+  animation: moveRight 30s linear infinite;
+}
+
+@keyframes moveRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .quote-cta {
@@ -359,3 +444,5 @@
     font-size: 0.85rem;
   }
 }
+
+

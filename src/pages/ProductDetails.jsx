@@ -8,6 +8,21 @@ import { HashLink } from "react-router-hash-link";
 import { IoHomeSharp } from "react-icons/io5";
 
 function ProductDetails() {
+
+  const industries = [
+    "E-Commerce",
+    "Food & Beverage",
+    "Electronics",
+    "Pharmaceuticals",
+    "Retail Packaging",
+    "Logistics & Shipping",
+    "FMCG Products",
+    "Textile & Garments",
+    "Automotive Industry",
+  ];
+
+  const row1 = industries.slice(0, 5);
+  const row2 = industries.slice(5);
     
   const { slug } = useParams();
   const product = productData.find(
@@ -62,19 +77,42 @@ function ProductDetails() {
 
 </div>
 
-        <div className="pd-industries-section">
+      
+<div className='pd-industries-section'>
+  <h2>Industries We Serve</h2>
 
-          <h2>Industries We Serve</h2>
-          <div className="pd-industries-grid">
-            <div className="pd-industry-box">E-Commerce</div>
-            <div className="pd-industry-box">Food & Beverage</div>
-            <div className="pd-industry-box">Electronics</div>
-            <div className="pd-industry-box">Pharmaceuticals</div>
-            <div className="pd-industry-box">Retail Packaging</div>
-            <div className="pd-industry-box">Logistics & Shipping</div>
-          </div>
+  {/* ROW 1 → first 5 items (RIGHT) */}
+  <div className='industries-slider-container'>
+    <div className='industries-slider row-right'>
 
-        </div>
+      {row1.map((item, i) => (
+        <span key={`r1-${i}`}>{item}</span>
+      ))}
+
+      {row1.map((item, i) => (
+        <span key={`r1-copy-${i}`}>{item}</span>
+      ))}
+
+    </div>
+  </div>
+
+  {/* ROW 2 → next 4 items (LEFT) */}
+  <div className='industries-slider-container'>
+    <div className='industries-slider row-left'>
+
+      {row2.map((item, i) => (
+        <span key={`r2-${i}`}>{item}</span>
+      ))}
+
+      {row2.map((item, i) => (
+        <span key={`r2-copy-${i}`}>{item}</span>
+      ))}
+
+    </div>
+  </div>
+</div>
+
+
          {/* <HashLink smooth  to="/#top" className="bthbtn"> <span> <IoHomeSharp /> </span></HashLink>  */}
       </section>
 

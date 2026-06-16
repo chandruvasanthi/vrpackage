@@ -58,7 +58,7 @@ function Footer() {
 
       
 
-<div className="footer-links">
+<div className="footer-links" id='footer-products'>
   <h3>Our Products</h3>
 
   <Link to="/product/corrugated-boxes">

@@ -3,204 +3,152 @@
   background: #000;
 }
 
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
 .mv-heading {
   text-align: center;
   font-size: 3rem;
   font-weight: 700;
+  color: #fff;
   margin-bottom: 15px;
- color: white;
-  /* background: linear-gradient(
-    135deg,
-    #ffffff 0%,
-    #ffffff 35%,
-    rgb(255,140,60) 65%,
-    rgb(242,93,41) 100%
-  );
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text; */
 }
 
 .mv-subtitle {
   max-width: 750px;
   margin: auto;
   text-align: center;
-  color: #cbd5e1;
+  color: #64748b;
   line-height: 1.8;
-  margin-bottom: 60px;
+  margin-bottom: 70px;
 }
 
 .mv-grid {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 }
 
 .mv-card {
-  background: linear-gradient(
-    145deg,
-    #111,
-    #1a1a1a
-  );
-
-  border: 1px solid rgba(242,93,41,0.15);
-
-  border-radius: 24px;
-
-  padding: 40px;
-
-  transition: 0.4s ease;
+  position: relative;
+  background: linear-gradient( 145deg, #111, #1a1a1a);
+  border: 1px solid rgba(242, 93, 41, 0.15);
+  border-radius: 20px;
+  padding: 60px 25px 25px;
+  text-align: start;
+  transition: all 0.4s ease;
 }
 
 .mv-card:hover {
-  transform: translateY(-10px);
-
-  border-color: rgb(242,93,41);
-
-  box-shadow:
-  0 20px 40px rgba(242,93,41,0.15);
+  transform: translateY(-8px);
+  border-color: rgb(242, 93, 41);
+  box-shadow:  0 15px 35px rgba(242, 93, 41, 0.15);
 }
-
-/* .mv-icon {
-  width: 70px;
-  height: 70px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 1.8rem;
-
-  color: rgb(242,93,41);
-
-  background: rgba(242,93,41,0.08);
-
-  border: 1px solid rgba(242,93,41,0.2);
-
-  border-radius: 18px;
-
-  margin-bottom: 25px;
-} */
 
 .mv-icon {
-  width: 70px;
-  height: 70px;
-
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
- 
-  font-size: 1.8rem;
-
-  color: rgb(242,93,41);
-
-  background: rgba(242,93,41,0.08);
-
-  border: 1px solid rgba(242,93,41,0.2);
-  /* border: 2px solid rgb(242,93,41); */
-  border-radius: 50px;
-
-  margin-bottom: 25px;
-
-  transition: 0.5s;
-  position: relative;
-  z-index: 1;
+  border-radius: 50%;
+  background: rgb(242, 93, 41);
+  color: #fff;
+  font-size: 1.4rem;
+  box-shadow: 0 8px 20px rgba(242, 93, 41, 0.3);
+  transition: all 0.4s ease;
 }
 
-/* 👉 Hover effect (same like choose-icon) */
+.mv-icon::after {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 1px solid rgba(242, 93, 41, 0.3);
+}
+
 .mv-card:hover .mv-icon {
-  background: rgb(242,93,41);
-  color: black;
-  transform: rotateY(180deg);
+  transform: translateX(-50%) scale(1.08);
 }
 
 .mv-card h3 {
-  color: white;
-  font-size: 1.6rem;
-  margin-bottom: 18px;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
 }
 
 .mv-card p {
   color: #cbd5e1;
-  line-height: 1.9;
   font-size: 0.95rem;
+  line-height: 1.8;
 }
 
-@media (max-width: 1024px) {
-
-  .mission-vision {
-    padding: 90px 5%;
+@media (max-width: 992px) {
+  .mv-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
   }
-
   .mv-heading {
     font-size: 2.5rem;
   }
-
-  .mv-card {
-    padding: 30px;
-  }
-
 }
 
 @media (max-width: 768px) {
-
-  .mv-grid {
-    grid-template-columns: 1fr;
+  .mission-vision {
+    padding: 80px 5%;
   }
-
   .mv-heading {
     font-size: 2rem;
   }
-
   .mv-subtitle {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
+    margin-bottom: 60px;
   }
-
+  .mv-card {
+    padding: 55px 20px 20px;
+  }
+  .mv-icon {
+    width: 55px;
+    height: 55px;
+    top: -28px;
+    font-size: 1.2rem;
+  }
+  .mv-card h3 {
+    font-size: 1.3rem;
+  }
+  .mv-card p {
+    font-size: 0.9rem;
+  }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 480px) {
 
   .mission-vision {
     padding: 70px 4%;
   }
-
   .mv-heading {
     font-size: 1.8rem;
   }
-
   .mv-card {
-    padding: 25px;
+    padding: 50px 18px 18px;
   }
-
   .mv-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    font-size: 1.1rem;
   }
-
   .mv-card h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
-
-  .mv-card p {
-    font-size: 0.9rem;
-  }
-
-}
-
-@media (max-width: 320px) {
-
-  .mv-heading {
-    font-size: 1.5rem;
-  }
-
-  .mv-card {
-    padding: 20px;
-  }
-
   .mv-card p {
     font-size: 0.85rem;
   }
-
 }
