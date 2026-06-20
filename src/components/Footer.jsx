@@ -4,6 +4,7 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp} from 'react-icons/f
 import { FaArrowUp } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { TfiDropboxAlt } from "react-icons/tfi";
+import { HashLink } from "react-router-hash-link";
 
 
 const scrollToTop = () => {
@@ -32,7 +33,7 @@ function Footer() {
 
 </a>
           <p>
-            VR Package is a renowned manufacturer, supplier, and exporter of high-quality corrugated boxes.
+            VR Package is a renowned manufacturer, supplier, and exporter of high-quality corrugated boxes in Salem.
           </p>
 
           <div className='footer-socials'>
@@ -49,11 +50,11 @@ function Footer() {
 
       <div className='footer-links'>
           <h3>Quick Links</h3>
-          <a href='#home'>Home</a>
-          <a href='#about'>About</a>
-          <a href='#products'>Products</a>
-          <a href='#process'>Process</a>
-          <a href='#contact'>Contact</a>
+           <HashLink smooth to="/#home">Home</HashLink>
+           <HashLink smooth to="/#about">About</HashLink>
+           <HashLink smooth to="/#products">Products</HashLink>
+           <HashLink smooth to="/#process">Process</HashLink>
+           <HashLink smooth to="/#contact">Contact</HashLink>
       </div>
 
       
