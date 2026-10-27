@@ -58,7 +58,7 @@
 
 .hero-eyebrow-line {
   display: inline-block;
-  width: 38px;
+  width: 12px;
   height: 2px;
   background: #f25d29;
   box-shadow: 0 0 12px rgba(242, 93, 41, 0.4);
@@ -168,13 +168,10 @@
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.32);
   cursor: pointer;
-  transition:
-    width 0.3s ease,
-    background 0.3s ease;
+  transition: width 0.3s ease, background 0.3s ease;
 }
 
 .hero-indicator.active {
-  width: 48px;
   background: #f25d29;
 }
 

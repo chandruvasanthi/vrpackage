@@ -68,7 +68,7 @@ function About() {
           <div className="vr-about-image-index">
             <span>VR</span>
             <span className="vr-about-index-divider" />
-            <span>ABOUT US </span>
+            <span>Committed to quality and customer trust.</span>
           </div>
         </div>
 
@@ -132,10 +132,10 @@ function About() {
           </div>
 
           <div className="vr-about-bottom">
-            <div className="vr-about-promise">
+            {/* <div className="vr-about-promise">
               <FaCheck />
               <span>Committed to quality and customer trust</span>
-            </div>
+            </div> */}
 
             {/* <a href="/get-quote" className="vr-about-cta">
               Explore Our Solutions

@@ -220,7 +220,7 @@
   height: 58px;
   flex-shrink: 0;
   border: 1px solid rgba(var(--card-accent-rgb), 0.3);
-  border-radius: 30px;
+  border-radius: 50px;
   background: rgba(var(--card-accent-rgb), 0.09);
   color: var(--card-accent);
   font-size: 23px;
