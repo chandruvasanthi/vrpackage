@@ -1,73 +1,106 @@
 import './Navbar.css'
 import { useState } from 'react'
-import { TfiDropboxAlt } from "react-icons/tfi"
-import { FaBars, FaTimes } from "react-icons/fa"
-import { Link } from 'react-router-dom'
+import { FaBars, FaTimes } from 'react-icons/fa'
 import { HashLink } from 'react-router-hash-link'
 
 function Navbar() {
-
   const [menuOpen, setMenuOpen] = useState(false)
 
-  return (
+  const closeMenu = () => setMenuOpen(false)
 
-    <nav className='navbar'>
-      <a href='/#home' className='logo'>
-        <div className='logo-iocn'>
-         <img  src='https://i.ibb.co/5xYQJVFL/16ec22a5-bc2c-4640-9249-35f514835786.png'
-               alt='VR Logo'
-               className='logo-image'
-         />
+  return (
+    <nav className="navbar">
+      <a href="/#home" className="logo" onClick={closeMenu}>
+        <div className="logo-icon">
+          <img
+            src="https://i.ibb.co/5xYQJVFL/16ec22a5-bc2c-4640-9249-35f514835786.png"
+            alt="VR Logo"
+            className="logo-image"
+          />
         </div>
 
         <h2>
-          <span className='vr-text'>VR</span>{' '}
-          <span className='package-text'>PACKAGE</span>
+          <span className="vr-text">VR</span>{' '}
+          <span className="package-text">PACKAGE</span>
         </h2>
       </a>
 
-    
       <ul className={menuOpen ? 'nav-links active' : 'nav-links'}>
-
         <li>
-          <HashLink  smooth to='/#home' onClick={() => setMenuOpen(false)}> Home </HashLink>
+          <HashLink smooth to="/#home" onClick={closeMenu}>
+            Home
+          </HashLink>
         </li>
 
         <li>
-          <HashLink smooth to='/#about'  onClick={() => setMenuOpen(false)} > About</HashLink>
+          <HashLink smooth to="/#about" onClick={closeMenu}>
+            About
+          </HashLink>
         </li>
 
         <li>
-          <HashLink smooth to='/#products'  onClick={() => setMenuOpen(false)}>  Products </HashLink>
+          <HashLink smooth to="/#products" onClick={closeMenu}>
+            Products
+          </HashLink>
         </li>
 
         <li>
-          <HashLink smooth to='/#process' onClick={() => setMenuOpen(false)}>  Process </HashLink>
-        </li>
-        <li>
-          <HashLink smooth to='/#contact'  onClick={() => setMenuOpen(false)} > Contact </HashLink>
-        </li>
-        <li>
-          <HashLink smooth to='/#faq' onClick={() => setMenuOpen(false)}> FAQ's </HashLink>
+          <HashLink smooth to="/#process" onClick={closeMenu}>
+            Process
+          </HashLink>
         </li>
 
+        <li>
+          <HashLink smooth to="/#contact" onClick={closeMenu}>
+            Contact
+          </HashLink>
+        </li>
+
+        <li>
+          <HashLink smooth to="/#faq" onClick={closeMenu}>
+            FAQ's
+          </HashLink>
+        </li>
+
+        <li className="mobile-quote-item">
+          <HashLink
+            smooth
+            to="/get-quote"
+            className="mobile-quote-link"
+            onClick={closeMenu}
+          >
+            Get Quote <span>↗</span>
+          </HashLink>
+        </li>
       </ul>
 
-    <HashLink smooth to='/get-quote'> <button className='nav-btn'>  Get Quote </button> </HashLink>
+      <HashLink smooth to="/get-quote" className="nav-quote-link">
+        <button className="nav-btn" onClick={closeMenu}>
+          Get Quote
+          <span className="nav-btn-arrow">↗</span>
+        </button>
+      </HashLink>
 
+      <button
+        type="button"
+        className={`menu-toggle ${menuOpen ? 'menu-open' : ''}`}
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+        aria-expanded={menuOpen}
+      >
+        {menuOpen ? <FaTimes /> : <FaBars />}
+      </button>
 
-      <div className='menu-toggle' onClick={() => setMenuOpen(!menuOpen)}>
-
-        {
-          menuOpen
-            ? <FaTimes />
-            : <FaBars />
-        }
-
-      </div>
-
+      {menuOpen && (
+        <button
+          type="button"
+          className="nav-overlay"
+          aria-label="Close navigation menu"
+          onClick={closeMenu}
+        />
+      )}
     </nav>
   )
 }
 
-export default Navbar;
+export default Navbar

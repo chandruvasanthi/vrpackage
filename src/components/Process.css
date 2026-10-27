@@ -1,273 +1,643 @@
 .process-section {
   width: 100%;
-  padding: 120px 6%;
-  background:
-  radial-gradient(circle at top left, rgba(242,93,41,0.12), transparent 30%),
-  #050505;
+  padding: 110px 0 120px;
+  position: relative;
   overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(242, 93, 41, 0.12),
+      transparent 45%
+    ),
+    #090a0f;
 }
+
+/* ================================
+   SECTION HEADING
+================================ */
 
 .process-heading {
   text-align: center;
-  margin-bottom: 70px;
+  margin-bottom: 65px;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .process-heading h2 {
-  color: white;
-  font-size: 3rem;
+  color: #ffffff;
+  /* font-size: 46px; */
+    font-size: clamp(38px, 4.3vw, 61px);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  line-height: 1.2;
+  margin: 0;
+  position: relative;
+  display: inline-block;
 }
+
+.process-heading h2::after {
+  content: '';
+  display: block;
+  width: 65px;
+  height: 4px;
+  margin: 18px auto 0;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #f25d29, #ff8c3c);
+  box-shadow: 0 0 18px rgba(242, 93, 41, 0.4);
+}
+
+/* ================================
+   CAROUSEL VIEWPORT
+================================ */
 
 .horizontal-scroll {
   width: 100%;
   overflow: hidden;
   position: relative;
+  padding: 15px 0 25px;
+
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 5%,
+    #000 95%,
+    transparent
+  );
+
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 5%,
+    #000 95%,
+    transparent
+  );
 }
+
+.horizontal-scroll:active {
+  cursor: grabbing;
+}
+
+/* ================================
+   MOVING TRACK
+================================ */
 
 .process-track {
   display: flex;
-  gap: 22px;
-  width: max-content;
-  display: flex;
   align-items: stretch;
-  gap: 22px;
+  gap: 24px;
   width: max-content;
+
   will-change: transform;
   backface-visibility: hidden;
   transform: translateZ(0);
 }
 
+/* Each set contains one complete list of cards */
+
+.process-card-set {
+  display: flex;
+  align-items: stretch;
+  flex-shrink: 0;
+  gap: 24px;
+  width: max-content;
+}
+
+/* ================================
+   PROCESS CARD
+================================ */
+
 .process-card {
-  width: 320px;
-  min-height: 240px;
-  padding: 28px;
-  border-radius: 28px;
+  width: 310px;
+  min-height: 300px;
+  padding: 27px;
+
   position: relative;
+  isolation: isolate;
   overflow: hidden;
   flex-shrink: 0;
-  background:
-  linear-gradient( 145deg, rgba(18,18,18,0.98), rgba(32,32,32,0.95));
-  border: 1px solid rgba(255,255,255,0.06);
-  backdrop-filter: blur(10px);
-  transition: 0.5s;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-    transform: translateZ(0);
-  backface-visibility: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 22px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(25, 26, 31, 0.98),
+    rgba(13, 14, 18, 0.98)
+  );
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
 }
 
 .process-card:hover {
-  transform: translateY(-10px);
-  border-color: rgba(242,93,41,0.5);
-  box-shadow: 0 20px 45px rgba(242,93,41,0.12);
+  border-color: rgba(242, 93, 41, 0.55);
+
+  background: linear-gradient(
+    145deg,
+    rgba(34, 27, 25, 0.99),
+    rgba(15, 15, 19, 0.99)
+  );
+
+  box-shadow:
+    0 22px 50px rgba(0, 0, 0, 0.32),
+    0 0 30px rgba(242, 93, 41, 0.08);
 }
+
+/* ================================
+   CARD TOP LABEL
+================================ */
+
+.card-top-line {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 25px;
+
+  position: relative;
+  z-index: 1;
+}
+
+.card-step {
+  color: #ff8c3c;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.card-line {
+  height: 1px;
+  flex: 1;
+
+  background: linear-gradient(
+    90deg,
+    rgba(242, 93, 41, 0.55),
+    rgba(255, 255, 255, 0.04)
+  );
+}
+
+/* ================================
+   BACKGROUND CARD NUMBER
+================================ */
 
 .card-number {
   position: absolute;
-  top: 20px;
-  right: 25px;
-  font-size: 3.5rem;
-  font-weight: 800;
-  color: rgba(255,255,255,0.05);
+  top: 48px;
+  right: 20px;
+  z-index: -1;
+
+  font-size: 82px;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -5px;
+
+  color: rgba(255, 255, 255, 0.045);
+  pointer-events: none;
+
+  transition:
+    color 0.35s ease,
+    transform 0.35s ease;
 }
 
+.process-card:hover .card-number {
+  color: rgba(242, 93, 41, 0.12);
+  transform: translateY(-3px);
+}
+
+/* ================================
+   PROCESS ICON
+================================ */
+
 .card-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 18px;
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+
   display: flex;
-  justify-content: center;
   align-items: center;
-  background: linear-gradient(  135deg, rgb(242,93,41),  rgb(255,140,60));
-  color: white;
-  font-size: 1.4rem;
-  margin-bottom: 22px;
-  box-shadow: 0 10px 25px rgba(242,93,41,0.25);
-  transition: 0.4s;
+  justify-content: center;
+
+  position: relative;
+  z-index: 1;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 17px;
+
+  background: linear-gradient(
+    135deg,
+    #f25d29,
+    #ff8c3c
+  );
+
+  color: #ffffff;
+  font-size: 25px;
+
+  box-shadow:
+    0 9px 22px rgba(242, 93, 41, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
 }
 
 .process-card:hover .card-icon {
-  transform: rotateY(180deg) scale(1.08);
+  transform: translateY(-3px) scale(1.05);
+
+  box-shadow:
+    0 12px 28px rgba(242, 93, 41, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
+
+/* ================================
+   CARD TITLE
+================================ */
 
 .process-card h3 {
-  color: white;
-  font-size: 1.3rem;
-  margin-bottom: 14px;
+  position: relative;
+  z-index: 1;
+
+  margin: 24px 0 12px;
+
+  color: #ffffff;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.4px;
+
+  transition: color 0.3s ease;
 }
 
-.process-card p {
-  color: #cbd5e1;
-  line-height: 1.7;
-  font-size: 0.9rem;
+.process-card:hover h3 {
+  color: #ff8c3c;
 }
+
+/* ================================
+   CARD DESCRIPTION
+================================ */
+
+.process-card p {
+  position: relative;
+  z-index: 1;
+
+  margin: 0;
+
+  color: #aeb2bd;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+/* ================================
+   ORANGE GLOW
+================================ */
 
 .card-glow {
   position: absolute;
-  width: 180px;
-  height: 180px;
+  z-index: -1;
+
+  top: -100px;
+  right: -100px;
+
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
-  background:rgba(242,93,41,0.12);
-  top: -70px;
-  right: -70px;
-  filter: blur(30px);
+
+  background: rgba(242, 93, 41, 0.11);
+  filter: blur(55px);
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
 }
 
- @media (max-width: 1440px) {
+.process-card:hover .card-glow {
+  transform: scale(1.25);
+  opacity: 1;
+}
+
+/* ================================
+   CARD BOTTOM ACCENT
+================================ */
+
+.card-bottom-accent {
+  position: absolute;
+  bottom: 0;
+  left: 27px;
+  right: 27px;
+
+  height: 2px;
+  border-radius: 5px 5px 0 0;
+
+  background: linear-gradient(
+    90deg,
+    #f25d29,
+    #ff8c3c,
+    transparent
+  );
+
+  transform: scaleX(0.25);
+  transform-origin: left;
+  opacity: 0.65;
+
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
+
+.process-card:hover .card-bottom-accent {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+/* ================================
+   CAROUSEL INSTRUCTION
+================================ */
+
+.process-hint {
+  margin: 22px 0 0;
+  padding: 0 16px;
+
+  text-align: center;
+  color: #888b95;
+
+  font-size: 12px;
+  letter-spacing: 0.4px;
+}
+
+/* ================================
+   LARGE SCREENS
+================================ */
+
+@media (min-width: 1600px) {
   .process-section {
-    padding: 110px 6%;
+    padding: 125px 0 135px;
   }
+
   .process-heading h2 {
-    font-size: 2.8rem;
+    font-size: 50px;
   }
+
   .process-card {
-    width: 300px;
-    min-height: 230px;
+    width: 330px;
+    min-height: 310px;
+    padding: 30px;
   }
 }
 
-@media (max-width: 1024px) {
+/* ================================
+   LAPTOPS
+================================ */
+
+@media (max-width: 1200px) {
   .process-section {
-    padding: 100px 5%;
+    padding: 100px 0 110px;
   }
+
   .process-heading {
-    margin-bottom: 60px;
+    margin-bottom: 55px;
   }
+
   .process-heading h2 {
-    font-size: 2.5rem;
+    font-size: 42px;
   }
+
+  .process-track,
+  .process-card-set {
+    gap: 20px;
+  }
+
   .process-card {
-    width: 280px;
-    min-height: 220px;
+    width: 285px;
+    min-height: 285px;
     padding: 25px;
   }
-  .card-icon {
-    width: 55px;
-    height: 55px;
-    font-size: 1.2rem;
-  }
+
   .card-number {
-    font-size: 3rem;
+    font-size: 74px;
+  }
+
+  .process-card h3 {
+    font-size: 19px;
   }
 }
+
+/* ================================
+   TABLETS
+================================ */
 
 @media (max-width: 768px) {
   .process-section {
-    padding: 80px 5%;
+    padding: 80px 0 90px;
   }
-  .process-heading {
-    margin-bottom: 50px;
-  }
-  .process-heading h2 {
-    font-size: 2rem;
-  }
-  .process-track {
-    gap: 18px;
-  }
-  .process-card {
-    width: 240px;
-    min-height: 210px;
-    padding: 22px;
-  }
-  .card-icon {
-    width: 50px;
-    height: 50px;
-    font-size: 1.1rem;
-    margin-bottom: 18px;
-  }
-  .card-number {
-    font-size: 2.5rem;
-  }
-  .process-card h3 {
-    font-size: 1.1rem;
-  }
-  .process-card p {
-    font-size: 0.85rem;
-    line-height: 1.6;
-  }
-}
 
-@media (max-width: 425px) {
-  .process-section {
-    padding: 70px 4%;
-  }
-  .process-heading h2 {
-    font-size: 1.8rem;
-  }
-  .process-track {
-    gap: 15px;
-  }
-  .process-card {
-    width: 220px;
-    min-height: 200px;
-    padding: 20px;
-  }
-  .card-icon {
-    width: 45px;
-    height: 45px;
-    font-size: 1rem;
-  }
-  .card-number {
-    font-size: 2.2rem;
-  }
-  .process-card h3 {
-    font-size: 1rem;
-  }
-  .process-card p {
-    font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 375px) {
-  .process-heading h2 {
-    font-size: 1.6rem;
-  }
-  .process-card {
-    width: 200px;
-    min-height: 190px;
-    padding: 18px;
-  }
-  .card-number {
-    font-size: 2rem;
-  }
-  .process-card h3 {
-    font-size: 0.95rem;
-  }
-  .process-card p {
-    font-size: 0.75rem;
-    line-height: 1.5;
-  }
-}
-
-@media (max-width: 320px) {
-  .process-section {
-    padding: 60px 4%;
-  }
   .process-heading {
     margin-bottom: 40px;
   }
+
   .process-heading h2 {
-    font-size: 1.4rem;
+    font-size: 35px;
+    letter-spacing: -1px;
   }
+
+  .process-heading h2::after {
+    width: 52px;
+    height: 3px;
+    margin-top: 14px;
+  }
+
+  .horizontal-scroll {
+    padding: 12px 0 20px;
+  }
+
+  .process-track,
+  .process-card-set {
+    gap: 16px;
+  }
+
   .process-card {
-    width: 180px;
-    min-height: 180px;
-    padding: 16px;
+    width: 255px;
+    min-height: 265px;
+    padding: 22px;
+    border-radius: 19px;
   }
+
+  .card-top-line {
+    margin-bottom: 22px;
+  }
+
   .card-icon {
-    width: 40px;
-    height: 40px;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
+    width: 52px;
+    height: 52px;
+    border-radius: 15px;
+    font-size: 22px;
   }
+
   .card-number {
-    font-size: 1.8rem;
-    top: 15px;
-    right: 15px;
+    top: 45px;
+    right: 17px;
+    font-size: 65px;
   }
+
   .process-card h3 {
-    font-size: 0.9rem;
+    margin-top: 21px;
+    font-size: 18px;
   }
+
   .process-card p {
-    font-size: 0.7rem;
-    line-height: 1.4;
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .card-bottom-accent {
+    left: 22px;
+    right: 22px;
+  }
+
+  .process-hint {
+    margin-top: 16px;
+    font-size: 11px;
+  }
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 425px) {
+  .process-section {
+    padding: 65px 0 70px;
+  }
+
+  .process-heading {
+    margin-bottom: 32px;
+  }
+
+  .process-heading h2 {
+    font-size: 30px;
+  }
+
+  .process-track,
+  .process-card-set {
+    gap: 14px;
+  }
+
+  .process-card {
+    width: 235px;
+    min-height: 255px;
+    padding: 20px;
+    border-radius: 17px;
+  }
+
+  .card-top-line {
+    margin-bottom: 20px;
+  }
+
+  .card-step {
+    font-size: 9px;
+  }
+
+  .card-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+    border-radius: 14px;
+  }
+
+  .card-number {
+    top: 43px;
+    right: 15px;
+    font-size: 58px;
+  }
+
+  .process-card h3 {
+    margin: 20px 0 10px;
+    font-size: 17px;
+  }
+
+  .process-card p {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .card-bottom-accent {
+    left: 20px;
+    right: 20px;
+  }
+}
+
+/* ================================
+   SMALL PHONES
+================================ */
+
+@media (max-width: 320px) {
+  .process-section {
+    padding: 55px 0 60px;
+  }
+
+  .process-heading h2 {
+    font-size: 27px;
+  }
+
+  .process-card {
+    width: 215px;
+    min-height: 245px;
+    padding: 18px;
+  }
+
+  .card-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+
+  .card-number {
+    font-size: 52px;
+  }
+
+  .process-card h3 {
+    font-size: 16px;
+  }
+
+  .process-card p {
+    font-size: 11px;
+  }
+
+  .card-bottom-accent {
+    left: 18px;
+    right: 18px;
+  }
+}
+
+/* ================================
+   REDUCED MOTION ACCESSIBILITY
+================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .process-card,
+  .card-icon,
+  .card-number,
+  .card-glow,
+  .card-bottom-accent {
+    transition: none;
   }
 }

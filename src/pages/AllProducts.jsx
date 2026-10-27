@@ -1,10 +1,10 @@
-import './AllProducts.css';
-import productData from '../data/productData';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import { HashLink } from 'react-router-hash-link';
-import WhatsApp from '../components/WhatsApp';
-import { useEffect } from 'react';
+import "./AllProducts.css";
+import productData from "../data/productData";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import { HashLink } from "react-router-hash-link";
+import WhatsApp from "../components/WhatsApp";
+import { useEffect } from "react";
 
 function AllProducts() {
   useEffect(() => {
@@ -30,84 +30,134 @@ function AllProducts() {
     <>
       <Navbar />
 
-      <section className='all-products'>
+      <main className="all-products">
+        <section className="all-products-main">
+          <div className="all-products-container">
+            <div className="all-products-header">
+              <span className="all-products-eyebrow">
+                <span className="all-products-eyebrow-line"></span>
+                OUR PRODUCTS
+              </span>
 
-        <div className='container'>
-          <h2 className='all-products-heading'>
-            Exclusive Products Collection
-          </h2>
+              <h1 className="all-products-heading">
+                Exclusive Products <span>Collection</span>
+              </h1>
+            </div>
 
-          <div className='all-products-grid'>
-            {productData.map((item) => (
-              <div className='all-product-card' key={item.id}>
-                <img src={item.image} alt={item.title} loading='lazy' />
+            <div className="all-products-grid">
+              {productData.map((item, index) => (
+                <article className="all-product-card" key={item.id}>
+                  {/* <div className="all-product-image">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      loading="lazy"
+                    />
+                    <div className="choose-card-glow"></div>
+              <div className="choose-card-accent"></div>
+                
+                  </div> */}
+                     
+<div className="all-product-image">
+  <img
+    src={item.image}
+    alt={item.title}
+    loading="lazy"
+  />
 
-                <div className='all-product-content'>
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-
-                  <HashLink smooth to={`/product/${item.slug}`}>
-                    <button className="product-btn">Explore</button>
-                  </HashLink>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-     {/* INDUSTRIES SECTION */}
-<div className='industries-section'>
-  <h2>Industries We Serve</h2>
-
-  {/* ROW 1 → first 5 items (RIGHT) */}
-  <div className='industries-slider-container'>
-    <div className='industries-slider row-right'>
-
-      {row1.map((item, i) => (
-        <span key={`r1-${i}`}>{item}</span>
-      ))}
-
-      {row1.map((item, i) => (
-        <span key={`r1-copy-${i}`}>{item}</span>
-      ))}
-
-    </div>
-  </div>
-
-  {/* ROW 2 → next 4 items (LEFT) */}
-  <div className='industries-slider-container'>
-    <div className='industries-slider row-left'>
-
-      {row2.map((item, i) => (
-        <span key={`r2-${i}`}>{item}</span>
-      ))}
-
-      {row2.map((item, i) => (
-        <span key={`r2-copy-${i}`}>{item}</span>
-      ))}
-
-    </div>
-  </div>
+  <div className="choose-card-glow" aria-hidden="true" />
+  <div className="choose-card-accent" aria-hidden="true" />
 </div>
 
-        <div className='quote-cta'>
-          <h2>Need Custom Packaging Solutions?</h2>
+                  <div className="all-product-content">
+                    
+                    <h2 className="all-product-content-h2">{item.title}</h2>
 
-          <p>
-            Get high-quality corrugated boxes manufactured according to
-            your exact business requirements.
-          </p>
+                    <p>{item.description}</p>
 
-          <a
-            href='https://wa.me/916381506536'
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button className='cta-btn'>Request a Quote</button>
-          </a>
-        </div>
+                    <HashLink
+                      className="product-btn"
+                      smooth
+                      to={`/product/${item.slug}`}
+                    >
+                      <span>Explore</span>
+                      <span className="product-btn-arrow" aria-hidden="true">
+                        ↗
+                      </span>
+                    </HashLink>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
 
-      </section>
+        <section className="industries-section">
+          <div className="industries-header">
+            <span className="all-products-eyebrow">
+              <span className="all-products-eyebrow-line"></span>
+              OUR EXPERTISE
+            </span>
+
+            <h2>
+              Industries We <span>Serve</span>
+            </h2>
+          </div>
+
+          <div className="industries-slider-container">
+            <div className="industries-slider row-right">
+              {row1.map((item, index) => (
+                <span key={`r1-${index}`}>{item}</span>
+              ))}
+
+              {row1.map((item, index) => (
+                <span key={`r1-copy-${index}`} aria-hidden="true">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="industries-slider-container">
+            <div className="industries-slider row-left">
+              {row2.map((item, index) => (
+                <span key={`r2-${index}`}>{item}</span>
+              ))}
+
+              {row2.map((item, index) => (
+                <span key={`r2-copy-${index}`} aria-hidden="true">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="quote-cta">
+          <div className="quote-cta-content">
+            <span className="quote-cta-eyebrow">LET'S BUILD SOMETHING</span>
+
+            <h2>Need Custom Packaging Solutions?</h2>
+
+            <p>
+              Get high-quality corrugated boxes manufactured according to
+              your exact business requirements.
+            </p>
+
+            <a
+              className="cta-btn"
+              href="https://wa.me/916381506536"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Request a Quote</span>
+              <span className="cta-btn-arrow" aria-hidden="true">
+                ↗
+              </span>
+            </a>
+          </div>
+        </section>
+      </main>
 
       <Footer />
       <WhatsApp />
