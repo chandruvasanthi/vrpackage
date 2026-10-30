@@ -2,7 +2,7 @@ import "./AllProducts.css";
 import productData from "../data/productData";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { HashLink } from "react-router-hash-link";
+import { Link } from "react-router-dom";
 import WhatsApp from "../components/WhatsApp";
 import { useEffect } from "react";
 
@@ -31,72 +31,80 @@ function AllProducts() {
       <Navbar />
 
       <main className="all-products">
+
+        {/* ALL PRODUCTS */}
         <section className="all-products-main">
           <div className="all-products-container">
+
             <div className="all-products-header">
               <span className="all-products-eyebrow">
-                <span className="all-products-eyebrow-line"></span>
-                OUR PRODUCTS
+                <span className="all-products-eyebrow-line" />
+                VR PACKAGE
+                <span className="all-products-eyebrow-line" />
               </span>
 
               <h1 className="all-products-heading">
-                Exclusive Products <span>Collection</span>
+                Exclusive Products{" "}
+                <span>Collection</span>
               </h1>
             </div>
 
             <div className="all-products-grid">
               {productData.map((item, index) => (
-                <article className="all-product-card" key={item.id}>
-                  {/* <div className="all-product-image">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      loading="lazy"
-                    />
-                    <div className="choose-card-glow"></div>
-              <div className="choose-card-accent"></div>
-                
-                  </div> */}
-                     
-<div className="all-product-image">
-  <img
-    src={item.image}
-    alt={item.title}
-    loading="lazy"
-  />
+                <Link
+                  to={`/product/${item.slug}`}
+                  key={item.id}
+                  className="all-product-link"
+                >
+                  <article className="all-product-card">
 
-  <div className="choose-card-glow" aria-hidden="true" />
-  <div className="choose-card-accent" aria-hidden="true" />
-</div>
+                    <div className="all-product-image">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        loading="lazy"
+                      />
 
-                  <div className="all-product-content">
-                    
-                    <h2 className="all-product-content-h2">{item.title}</h2>
+                      <div className="all-product-image-overlay" />
 
-                    <p>{item.description}</p>
+                      {/* <span className="all-product-number">
+                        {String(index + 1).padStart(2, "0")}
+                      </span> */}
+                    </div>
 
-                    <HashLink
-                      className="product-btn"
-                      smooth
-                      to={`/product/${item.slug}`}
-                    >
-                      <span>Explore</span>
-                      <span className="product-btn-arrow" aria-hidden="true">
+                    <div className="all-product-content">
+
+                      <div className="all-product-title-wrap">
+                        <span className="all-product-title-line" />
+
+                        <h3>{item.title}</h3>
+                      </div>
+
+                      <span
+                        className="all-product-card-arrow"
+                        aria-hidden="true"
+                      >
                         ↗
                       </span>
-                    </HashLink>
-                  </div>
-                </article>
+
+                    </div>
+
+                  </article>
+                </Link>
               ))}
             </div>
+
           </div>
         </section>
 
-        <section className="industries-section">
+        {/* INDUSTRIES */}
+        {/* <section className="industries-section">
+
           <div className="industries-header">
             <span className="all-products-eyebrow">
-              <span className="all-products-eyebrow-line"></span>
+              <span className="all-products-eyebrow-line" />
               OUR EXPERTISE
+              <span className="all-products-eyebrow-line" />
             </span>
 
             <h2>
@@ -106,6 +114,7 @@ function AllProducts() {
 
           <div className="industries-slider-container">
             <div className="industries-slider row-right">
+
               {row1.map((item, index) => (
                 <span key={`r1-${index}`}>{item}</span>
               ))}
@@ -115,11 +124,13 @@ function AllProducts() {
                   {item}
                 </span>
               ))}
+
             </div>
           </div>
 
           <div className="industries-slider-container">
             <div className="industries-slider row-left">
+
               {row2.map((item, index) => (
                 <span key={`r2-${index}`}>{item}</span>
               ))}
@@ -129,13 +140,45 @@ function AllProducts() {
                   {item}
                 </span>
               ))}
+
             </div>
           </div>
-        </section>
 
+        </section> */}
+        
+{/* INDUSTRIES */}
+<section className="pd-industries-section">
+  <div className="pd-industries-header">
+    <h2>
+      Industries We <span>Serve</span>
+    </h2>
+  </div>
+
+  <div className="pd-industries-slider-container">
+    <div className="pd-industries-slider pd-row-right">
+      {[...row1, ...row1].map((item, index) => (
+        <span key={`r1-${index}`}>{item}</span>
+      ))}
+    </div>
+  </div>
+
+  <div className="pd-industries-slider-container">
+    <div className="pd-industries-slider pd-row-left">
+      {[...row2, ...row2].map((item, index) => (
+        <span key={`r2-${index}`}>{item}</span>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+        {/* QUOTE CTA */}
         <section className="quote-cta">
           <div className="quote-cta-content">
-            <span className="quote-cta-eyebrow">LET'S BUILD SOMETHING</span>
+
+            <span className="quote-cta-eyebrow">
+              LET'S BUILD SOMETHING
+            </span>
 
             <h2>Need Custom Packaging Solutions?</h2>
 
@@ -151,12 +194,15 @@ function AllProducts() {
               rel="noopener noreferrer"
             >
               <span>Request a Quote</span>
+
               <span className="cta-btn-arrow" aria-hidden="true">
                 ↗
               </span>
             </a>
+
           </div>
         </section>
+
       </main>
 
       <Footer />

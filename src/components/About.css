@@ -253,9 +253,6 @@
 }
 
 .vr-about-gradient {
-  display: block;
-  width: fit-content;
-  max-width: 100%;
   color: transparent;
   background: linear-gradient(
     100deg,
@@ -268,19 +265,19 @@
   -webkit-background-clip: text;
 }
 
-.vr-about-intro {
+/* .vr-about-intro {
   max-width: 520px;
   margin: 0 0 20px;
   color: #f1f1f7;
   font-size: 18px;
   font-weight: 550;
   line-height: 1.7;
-}
+} */
 
-.vr-about-intro strong {
-  color: #ff8054;
-  font-weight: 750;
-}
+  /* .vr-about-intro strong {
+    color: #ff8054;
+    font-weight: 750;
+  } */
 
 .vr-about-description {
   max-width: 590px;
@@ -563,7 +560,8 @@
   }
 
   .vr-about-heading {
-    font-size: clamp(40px, 7vw, 55px);
+      font-size: clamp(36px, 4.5vw, 48px);
+    /* font-size: clamp(40px, 7vw, 55px); */
   }
 
   .vr-about-intro {
@@ -657,7 +655,7 @@
 
   .vr-about-heading {
     margin-bottom: 18px;
-    font-size: clamp(36px, 10vw, 44px);
+    font-size: clamp(36px, 4.5vw, 44px);
     letter-spacing: -1.4px;
   }
 
@@ -714,9 +712,9 @@
     height: 275px;
   }
 
-  .vr-about-heading {
-    font-size: 34px;
-  }
+  /* .vr-about-heading {
+     font-size: clamp(36px, 4.5vw, 44px);
+  } */
 
   .vr-about-image-caption h3 {
     font-size: 20px;

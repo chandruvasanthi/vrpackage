@@ -87,12 +87,14 @@ function About() {
             <span className="vr-about-gradient"> VR Package.</span>
           </h2>
 
-          <p className="vr-about-intro">
+          {/* <p className="vr-about-intro">
             A new venture with a clear vision for
             <strong> better packaging solutions.</strong>
-          </p>
+          </p> */}
 
           <p className="vr-about-description">
+            A new venture with a clear vision for
+            better packaging solutions.
             VR Package is a newly established corrugated
             box manufacturing company focused on delivering
             durable, innovative and premium-quality packaging
