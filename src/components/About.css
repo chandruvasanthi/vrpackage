@@ -752,3 +752,22 @@
     transition: none !important;
   }
 }
+
+
+/* Fix About heading for 351px - 366px screens */
+
+@media screen and (min-width: 351px) and (max-width: 366px) {
+  .vr-about .vr-about-heading {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    font-size: 28px;
+    line-height: 1.2;
+    letter-spacing: -1px;
+  }
+
+  .vr-about .vr-about-gradient {
+    flex-shrink: 0;
+  }
+}
