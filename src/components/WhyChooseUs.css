@@ -35,7 +35,6 @@
 
 .why-choose .heading {
   color: #ffffff;
-  /* font-size: 46px; */
     font-size: clamp(38px, 4.3vw, 61px);
   font-weight: 800;
   line-height: 1.2;
@@ -603,5 +602,90 @@
 
   .choose-card:hover {
     transform: none;
+  }
+}
+
+
+
+/* =================================
+   MOBILE AUTOMATIC CARD SLIDER
+================================= */
+
+.choose-pagination {
+  display: none;
+}
+
+@media (max-width: 480px) {
+
+  .choose-grid {
+    display: flex;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    gap: 0;
+    touch-action: pan-y;
+  }
+
+  .choose-card {
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 100%;
+    min-height: 230px;
+
+    margin: 0;
+    box-sizing: border-box;
+
+    opacity: 0;
+    transform: translateX(35px);
+
+    display: flex;
+
+    transition:
+      transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.45s ease;
+
+    pointer-events: none;
+  }
+
+  .choose-card.active-card {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  /* Pagination */
+
+  .choose-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    margin-top: 25px;
+  }
+
+  .choose-dot {
+    width: 7px;
+    height: 7px;
+    padding: 0;
+    border: none;
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.25);
+
+    cursor: pointer;
+
+    transition:
+      width 0.35s ease,
+      background 0.35s ease;
+  }
+
+  .choose-dot.active {
+    width: 25px;
+    background: #f25d29;
+    box-shadow: 0 0 12px rgba(242,93,41,0.4);
+  }
+
+  .bottom-banner {
+    margin-top: 35px;
   }
 }

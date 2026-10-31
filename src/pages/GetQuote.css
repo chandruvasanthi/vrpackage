@@ -22,7 +22,6 @@
   color: #ffffff;
 }
 
-/* Background decorative elements */
 
 .getquote::before {
   content: "";
@@ -76,7 +75,7 @@
   background: #b923e1;
 }
 
-/* Main content */
+
 
 .quote-container {
   position: relative;
@@ -122,7 +121,6 @@
   max-width: 1000px;
   margin: 0 auto 24px;
   color: #ffffff;
-  /* font-size: clamp(38px, 5vw, 68px); */
     font-size: clamp(38px, 4.3vw, 61px);
   font-weight: 800;
   line-height: 1.12;
@@ -161,7 +159,7 @@
   line-height: 1.9;
 }
 
-/* Feature panels */
+
 
 .quote-features {
   display: grid;
@@ -285,8 +283,6 @@
   width: 65px;
 }
 
-/* WhatsApp quote CTA */
-
 .quote-action {
   display: flex;
   align-items: center;
@@ -350,8 +346,6 @@
   letter-spacing: 0.3px;
 }
 
-/* Bottom decorative label */
-
 .quote-bottom-label {
   display: flex;
   align-items: center;
@@ -370,8 +364,6 @@
   background: rgba(242, 93, 41, 0.45);
 }
 
-/* Animation */
-
 @keyframes quoteFadeUp {
   from {
     opacity: 0;
@@ -383,8 +375,6 @@
     transform: translateY(0);
   }
 }
-
-/* Laptop */
 
 @media (max-width: 1200px) {
   .getquote {
@@ -403,8 +393,6 @@
     padding: 28px 23px;
   }
 }
-
-/* Tablet */
 
 @media (max-width: 900px) {
   .getquote {
@@ -453,8 +441,6 @@
     margin-top: 50px;
   }
 }
-
-/* Mobile */
 
 @media (max-width: 600px) {
   .getquote {
@@ -576,8 +562,6 @@
   }
 }
 
-/* Small phones */
-
 @media (max-width: 375px) {
   .getquote {
     padding: 105px 16px 45px;
@@ -619,8 +603,6 @@
     letter-spacing: 1.5px;
   }
 }
-
-/* Reduced motion accessibility */
 
 @media (prefers-reduced-motion: reduce) {
   .quote-content {

@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import { useEffect } from 'react';
 import WhatsApp from '../components/WhatsApp';
 import { FaArrowRight, FaCheckCircle } from 'react-icons/fa';
+import CorrugatedBox3D from '../components/CorrugatedBox3D';
 
 function GetQuote() {
   useEffect(() => {
@@ -13,7 +14,7 @@ function GetQuote() {
   return (
     <>
       <Navbar />
-
+       
       <main className="getquote" id="quote">
         <div className="quote-background-glow quote-glow-one"></div>
         <div className="quote-background-glow quote-glow-two"></div>
@@ -116,7 +117,9 @@ function GetQuote() {
           </div>
         </div>
       </main>
-
+{/* <div className="gq-visual">
+  <CorrugatedBox3D />
+</div> */}
       <Footer />
       <WhatsApp />
     </>

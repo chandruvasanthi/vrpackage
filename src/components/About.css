@@ -715,7 +715,7 @@
   .vr-about-heading {
      /* font-size: clamp(36px, 4.5vw, 44px); */
       font-size: 28px;
-    letter-spacing: -0.5px;
+    letter-spacing: 0.2px;
   }
 
   .vr-about-image-caption h3 {
