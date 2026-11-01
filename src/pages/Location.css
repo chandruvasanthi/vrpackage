@@ -1,0 +1,131 @@
+
+.location-page {
+  min-height: 100vh;
+  padding: 110px 6% 70px;
+  background: #090a0f;
+  color: #fff;
+}
+
+.location-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.location-header button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: 0;
+  color: #aaa;
+  cursor: pointer;
+  margin-bottom: 35px;
+  font-size: 15px;
+}
+
+.location-header span {
+  color: #f25d29;
+  letter-spacing: 3px;
+  font-size: 13px;
+}
+
+.location-header h1 {
+  font-size: 42px;
+  margin: 15px 0;
+}
+
+.location-header h1 b {
+  color: #f25d29;
+}
+
+.location-header p {
+  color: #aaa;
+}
+
+.location-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 0.8fr 1.5fr;
+  gap: 25px;
+  background: #13151c;
+  padding: 20px;
+  border: 1px solid #292b33;
+  border-radius: 15px;
+}
+
+.location-details {
+  padding: 35px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.location-icon {
+  color: #f25d29;
+  font-size: 38px;
+  margin-bottom: 20px;
+}
+
+.location-details h2 {
+  font-size: 27px;
+  margin-bottom: 15px;
+}
+
+.location-details p {
+  color: #aaa;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.directions-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  background: #f25d29;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.directions-btn:hover {
+  background: #ff7b45;
+  transform: translateY(-3px);
+}
+
+.location-map {
+  height: 480px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.location-map iframe {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .location-page {
+    padding: 100px 5% 45px;
+  }
+
+  .location-header h1 {
+    font-size: 32px;
+  }
+
+  .location-container {
+    grid-template-columns: 1fr;
+    padding: 12px;
+  }
+
+  .location-details {
+    padding: 25px 15px;
+  }
+
+  .location-map {
+    height: 350px;
+  }
+}

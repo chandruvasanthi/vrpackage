@@ -49,7 +49,11 @@ function Navbar() {
             Process
           </HashLink>
         </li>
-
+         <li>
+          <HashLink smooth to="/#CorrugatedBox3D" onClick={closeMenu}>
+            Why we
+          </HashLink>
+        </li>
         <li>
           <HashLink smooth to="/#contact" onClick={closeMenu}>
             Contact

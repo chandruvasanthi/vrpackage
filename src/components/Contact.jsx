@@ -1,6 +1,8 @@
 import './Contact.css'
 import React from 'react'
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt,  FaLocationArrow  } from 'react-icons/fa'
+import { Link } from 'react-router-dom';
+
 
 function Contact() {
   const [result, setResult] = React.useState('')
@@ -98,7 +100,7 @@ function Contact() {
               </div>
             </div>
 
-            <div className="info-card">
+            {/* <div className="info-card" >
               <div className="info-icon">
                 <FaMapMarkerAlt />
               </div>
@@ -106,7 +108,17 @@ function Contact() {
                 <h3>Factory Location</h3>
                 <p>Salem, Tamil Nadu</p>
               </div>
+            </div> */}
+            
+         <Link to="/location" className="info-card location-link">
+            <div className="info-icon"><FaMapMarkerAlt /> </div>
+            <div className="info-content">
+               <h3>Factory Location</h3>
+               <p>Salem, Tamil Nadu  </p>
             </div>
+             <span className="location-view-text"> <FaLocationArrow /></span>
+         </Link>
+      
 
             <p className="contact-text">
               Contact Leading Corrugated Box Manufacturers

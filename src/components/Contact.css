@@ -766,3 +766,60 @@
     animation: none;
   }
 }
+
+
+
+.location-link {
+   display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.location-link:hover {
+  border-color: #f25d29;
+  transform: translateY(-3px);
+}
+
+/* .location-view-text {
+  display: inline-block;
+  margin-top: 7px;
+  color: #f25d29;
+  font-size: 13px;
+  font-weight: 600;
+} */
+ 
+.location-address {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.location-view-text {
+    margin-left: auto;
+  width: 27px;
+  height: 27px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: rgba(242, 93, 41, 0.12);
+  border: 1px solid rgba(242, 93, 41, 0.3);
+  border-radius: 50%;
+  color: #f25d29;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+
+.location-link:hover .location-view-text {
+  background: #f25d29;
+  color: #fff;
+  transform: translateX(4px);
+  border-color: #f25d29;
+}
+
+.location-view-text svg {
+  transform: rotate(-15deg);
+}

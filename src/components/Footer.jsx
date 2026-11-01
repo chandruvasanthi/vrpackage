@@ -1,5 +1,5 @@
 import './Footer.css'
-import { FaInstagram, FaWhatsapp, FaArrowUp } from 'react-icons/fa'
+import { FaInstagram, FaWhatsapp, FaArrowUp,FaMapMarkerAlt  } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'
 
@@ -47,6 +47,9 @@ function Footer() {
             >
               <FaWhatsapp />
             </a>
+
+
+            <Link to="/location" aria-label="View factory location"> <FaMapMarkerAlt /></Link>
           </div>
         </div>
 

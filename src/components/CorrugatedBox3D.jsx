@@ -41,8 +41,8 @@ import './CorrugatedBox3D.css';
 
 const CorrugatedBox3D = () => {
   return (
-    <section className="vr-showcase">
-           <div className="why-heading">
+    <section className="vr-showcase" >
+           <div className="why-heading" id='CorrugatedBox3D'>
           <h2 className="heading-center">Why <span className='why-span'>Choose Us</span></h2>
           <p className="choose-subtitle">
             Strong Packaging Solutions
