@@ -100,15 +100,7 @@ function Contact() {
               </div>
             </div>
 
-            {/* <div className="info-card" >
-              <div className="info-icon">
-                <FaMapMarkerAlt />
-              </div>
-              <div className="info-content">
-                <h3>Factory Location</h3>
-                <p>Salem, Tamil Nadu</p>
-              </div>
-            </div> */}
+      
             
          <Link to="/location" className="info-card location-link">
             <div className="info-icon"><FaMapMarkerAlt /> </div>

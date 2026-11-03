@@ -20,15 +20,16 @@ function Location() {
   const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${factoryLocation}&travelmode=driving`;
 
   return (
-    
+    <>
+    <Navbar />
     <section className="location-page" id='location'>
-        <Navbar />
+        
       <div className="location-header">
         {/* <button onClick={() => navigate(-1)}>
           <FaArrowLeft /> Back
         </button> */}
 
-        <span>OUR LOCATION</span>
+        {/* <span>OUR LOCATION</span> */}
         <h1>Find <b>VR Package</b></h1>
         <p>Visit us for reliable and quality packaging solutions.</p>
       </div>
@@ -70,10 +71,11 @@ function Location() {
         </div>
 
       </div>
-      <Footer />
-       <WhatsApp />
+     
     </section>
-    
+     <Footer />
+       <WhatsApp />
+    </>
   );
 }
 

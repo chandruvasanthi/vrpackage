@@ -2,6 +2,8 @@ import './Navbar.css'
 import { useState } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { HashLink } from 'react-router-hash-link'
+import { Link } from 'react-router-dom'
+import { FaChevronDown } from 'react-icons/fa'
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -43,6 +45,68 @@ function Navbar() {
             Products
           </HashLink>
         </li>
+        {/* <li className="nav-dropdown">
+  <HashLink smooth to="/#products" onClick={closeMenu}>
+    Products
+    <span className="dropdown-arrow"> <FaChevronDown className="dropdown-arrow" /></span>
+  </HashLink>
+
+  <ul className="dropdown-menu">
+    <li>
+      <Link to="/product/corrugated-boxes" onClick={closeMenu}>
+        Corrugated Boxes
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/product/printed-boxes" onClick={closeMenu}>
+        Printed Corrugated Boxes
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/product/custom-cartons" onClick={closeMenu}>
+        Custom Carton Boxes
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/product/heavy-duty-boxes" onClick={closeMenu}>
+        Heavy Duty Boxes
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/product/die-cut-boxes" onClick={closeMenu}>
+        Die-Cut Boxes
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/product/export-packaging" onClick={closeMenu}>
+        Export Packaging Boxes
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/product/food-packaging" onClick={closeMenu}>
+        Food Packaging Boxes
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/product/oil-packaging" onClick={closeMenu}>
+        Oil Packaging Boxes
+      </Link>
+    </li>
+
+    <li>
+      <Link to="/product/partition-boxes" onClick={closeMenu}>
+        Partition Boxes
+      </Link>
+    </li>
+  </ul>
+</li> */}
 
         <li>
           <HashLink smooth to="/#process" onClick={closeMenu}>

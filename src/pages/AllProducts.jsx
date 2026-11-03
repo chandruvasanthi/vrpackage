@@ -97,54 +97,7 @@ function AllProducts() {
           </div>
         </section>
 
-        {/* INDUSTRIES */}
-        {/* <section className="industries-section">
-
-          <div className="industries-header">
-            <span className="all-products-eyebrow">
-              <span className="all-products-eyebrow-line" />
-              OUR EXPERTISE
-              <span className="all-products-eyebrow-line" />
-            </span>
-
-            <h2>
-              Industries We <span>Serve</span>
-            </h2>
-          </div>
-
-          <div className="industries-slider-container">
-            <div className="industries-slider row-right">
-
-              {row1.map((item, index) => (
-                <span key={`r1-${index}`}>{item}</span>
-              ))}
-
-              {row1.map((item, index) => (
-                <span key={`r1-copy-${index}`} aria-hidden="true">
-                  {item}
-                </span>
-              ))}
-
-            </div>
-          </div>
-
-          <div className="industries-slider-container">
-            <div className="industries-slider row-left">
-
-              {row2.map((item, index) => (
-                <span key={`r2-${index}`}>{item}</span>
-              ))}
-
-              {row2.map((item, index) => (
-                <span key={`r2-copy-${index}`} aria-hidden="true">
-                  {item}
-                </span>
-              ))}
-
-            </div>
-          </div>
-
-        </section> */}
+       
         
 {/* INDUSTRIES */}
 <section className="pd-industries-section">

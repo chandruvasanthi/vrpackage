@@ -133,17 +133,7 @@ function About() {
             ))}
           </div>
 
-          <div className="vr-about-bottom">
-            {/* <div className="vr-about-promise">
-              <FaCheck />
-              <span>Committed to quality and customer trust</span>
-            </div> */}
-
-            {/* <a href="/get-quote" className="vr-about-cta">
-              Explore Our Solutions
-              <FaArrowRight />
-            </a> */}
-          </div>
+      
         </div>
       </div>
     </section>

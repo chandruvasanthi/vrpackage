@@ -1,32 +1,3 @@
-// import React from 'react';
-// import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-// import './CorrugatedBox3D.css';
-
-// const CorrugatedBox3D = ({
-//   width = '100%',
-//   height = '400px',
-//   className = '',
-//   loop = true,
-//   autoplay = true,
-// }) => {
-//   return (
-//     <div
-//       className={`vr-lottie-container ${className}`}
-//       style={{ width, height }}
-//     >
-      
-//       <DotLottieReact
-//   src="https://lottie.host/746f59ea-c176-4af9-8365-67063094691c/5rScqnepQo.lottie"
-//   loop={loop}
-//   autoplay={autoplay}
-// />
-//     </div>
-//   );
-// };
-
-// export default CorrugatedBox3D;
-
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';

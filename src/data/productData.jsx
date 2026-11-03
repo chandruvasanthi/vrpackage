@@ -293,7 +293,65 @@ applications: [
 "Food Products"
 ]
 },
+{
+  id: 13,
+  slug: "3-ply-corrugated-boxes",
+  title: "3-Ply Corrugated Boxes",
+  image: "https://i.ibb.co/YFrHvHkH/Packing-Boxes-3-Ply-16x16x16-Carton-Box-Packaging-Boxes.jpg",
+  description:
+    "Lightweight and durable 3-ply corrugated boxes designed for reliable packaging, storage, and transportation.",
 
+  fullDescription:
+    "Our 3-Ply Corrugated Boxes are manufactured using quality kraft paper with a single fluted layer between two flat liner sheets. This construction provides a practical balance of strength, lightweight handling, and cost-effective packaging. Ideal for businesses looking for dependable packaging solutions for everyday storage, handling, and transportation requirements. Available in customised sizes to suit different product dimensions and packaging needs.",
+
+  features: [
+    "Three-layer corrugated board construction",
+    "Lightweight and easy to handle",
+    "Good cushioning and product protection",
+    "Custom sizes and dimensions available",
+    "Cost-effective packaging solution",
+    "Recyclable kraft paper material"
+  ],
+
+  applications: [
+    "E-commerce and online retail packaging",
+    "Garments and textile packaging",
+    "Retail product packaging",
+    "Lightweight industrial goods",
+    "Storage and transportation",
+    "General shipping applications"
+  ]
+},
+{
+  id: 14,
+  slug: "5-ply-corrugated-boxes",
+  title: "5-Ply Corrugated Boxes",
+  image: "https://i.ibb.co/XZ5RZnsg/5-7-Ply-Heavy-Duty-Corrugated-Box-Manufacturer-Supplier-in-Ahmedabad-and-Gandhinagar.jpg",
+  description:
+    "Strong and durable 5-ply corrugated boxes designed for enhanced product protection during storage and transportation.",
+
+  fullDescription:
+    "Our 5-Ply Corrugated Boxes are manufactured using five layers of paper, including three flat liner sheets and two fluted layers. This multi-layer construction provides enhanced rigidity, cushioning, and stacking support compared to standard 3-ply packaging. Suitable for heavier products and demanding packaging requirements, these boxes help protect goods during handling, warehousing, and long-distance transportation. Custom dimensions and packaging specifications can be tailored to individual business requirements.",
+
+  features: [
+    "Five-layer corrugated board construction",
+    "Enhanced strength and durability",
+    "Improved cushioning and impact protection",
+    "Better stacking support",
+    "Suitable for heavier packaging requirements",
+    "Custom sizes and specifications available",
+    "Recyclable kraft paper material"
+  ],
+
+  applications: [
+    "Heavy industrial product packaging",
+    "Automotive components",
+    "Electronics and appliances",
+    "Bulk goods transportation",
+    "Export and long-distance shipping",
+    "Warehouse storage and distribution"
+  ]
+},
 ]
 
 export default productData;
