@@ -15,6 +15,7 @@ const Faq = lazy(() => import('../components/Faq'));
 const WhatsApp = lazy(() => import('../components/WhatsApp'));
 const Footer = lazy(() => import('../components/Footer'));
 const CorrugatedBox3D = lazy(()=> import('../components/CorrugatedBox3D'));
+const Testimonials = lazy(()=>import('../components/Testimonials'));
 
 function Home() {
   return (
@@ -39,8 +40,10 @@ function Home() {
       {/* <Gallery /> */}
         <CorrugatedBox3D />
       {/* <WhyChoose /> */}
+     
       <Contact />
       <Faq />
+       <Testimonials />
       <WhatsApp />
      </main>
 

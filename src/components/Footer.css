@@ -335,10 +335,10 @@
   bottom: 75px;
   width: 40px;
   height: 40px;
-  border: 1px solid rgba(242, 93, 41, 0.5);
-  border-radius: 20%;
-  background: rgba(242, 93, 41, 0.08);
-  color: var(--footer-orange);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.065);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 11px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -709,4 +709,205 @@
   .footer-scroll-top {
     bottom: 90px !important;
   }
+}
+
+
+/* =========================================
+   FOOTER NAVIGATION LINK DESIGN
+========================================= */
+
+.footer-links .footer-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  color: var(--footer-text);
+  font-size: 13px;
+  line-height: 1.7;
+  text-decoration: none;
+  margin: 0 0 13px;
+  padding: 0;
+  transition: color 0.3s ease;
+}
+
+/* Small arrow icon */
+
+.footer-link-arrow {
+  flex-shrink: 0;
+  font-size: 9px;
+  color: var(--footer-orange);
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Link hover */
+
+.footer-links .footer-nav-link:hover {
+  color: var(--footer-orange-light);
+  padding-left: 0;
+}
+
+.footer-nav-link:hover .footer-link-arrow {
+  color: var(--footer-orange-light);
+  transform: translateX(5px);
+}
+
+/* =========================================
+   CONTACT INFORMATION DESIGN
+========================================= */
+
+.footer-contact {
+  gap: 0;
+}
+
+.footer-contact .footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+  margin: 0 0 17px;
+  padding: 0;
+  color: var(--footer-text);
+  font-size: 13px;
+  line-height: 1.6;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Icon background */
+
+.footer-contact-icon {
+  width: 35px;
+  height: 35px;
+  min-width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--footer-orange);
+  background: rgba(242, 93, 41, 0.09);
+  border: 1px solid rgba(242, 93, 41, 0.19);
+  border-radius: 9px;
+  font-size: 13px;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Contact text */
+
+.footer-contact-text {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  transition: color 0.3s ease;
+}
+
+/* Contact hover */
+
+.footer-contact .footer-contact-item:hover {
+  color: var(--footer-orange-light);
+  padding-left: 0;
+}
+
+.footer-contact-item:hover .footer-contact-icon {
+  color: #fff;
+  background: var(--footer-orange);
+  border-color: var(--footer-orange);
+  transform: translateY(-2px);
+}
+
+.footer-contact-item:hover .footer-contact-text {
+  color: var(--footer-orange-light);
+}
+
+/* =========================================
+   RESPONSIVE CONTACT AND NAVIGATION
+========================================= */
+
+@media (max-width: 768px) {
+
+  .footer-links .footer-nav-link {
+    font-size: 13px;
+    margin-bottom: 12px;
+    gap: 11px;
+  }
+
+  .footer-contact .footer-contact-item {
+    font-size: 13px;
+    gap: 12px;
+    margin-bottom: 15px;
+  }
+
+  .footer-contact-icon {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .footer-links .footer-nav-link {
+    font-size: 12px;
+  }
+
+  .footer-contact .footer-contact-item {
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
+
+  .footer-contact-icon {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .footer-nav-link,
+  .footer-link-arrow,
+  .footer-contact-item,
+  .footer-contact-icon,
+  .footer-contact-text {
+    transition: none !important;
+  }
+
+}
+
+
+/* =========================================
+   SOCIAL ICONS - MATCH CONTACT ICON COLOR
+========================================= */
+
+.footer-socials a , .footer-contact-icon{
+
+    color: #ffffff;
+  background: rgba(255, 255, 255, 0.065);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 11px;
+  
+}
+
+
+
+.footer-socials a:hover , .footer-contact-icon:hover{
+  color: #fff;
+  background: var(--footer-orange);
+  border-color: var(--footer-orange);
+  transform: translateY(-4px);
+  box-shadow: 0 5px 18px rgba(242, 93, 41, 0.25);
+}
+
+.footer-socials a:hover svg {
+  color: #fff;
 }

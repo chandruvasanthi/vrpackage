@@ -1,5 +1,5 @@
 .vr-mv {
-  --mv-orange: #f25d29;
+  --mv-orange: #f25d29;  
   --mv-white: #f8f8fc;
   --mv-muted: #a6a9b8;
 
@@ -233,8 +233,10 @@
 
 .vr-mv .mv-card:hover .mv-icon {
   transform: scale(1.07) ;
-  /* color: white; */
-  background: rgba(var(--card-accent-rgb), 0.15);
+  color: white;
+  background: var( --mv-orange);
+  border-color: var( --mv-orange);
+  transform: translateY(-4px);
   box-shadow: 0 8px 30px rgba(var(--card-accent-rgb), 0.16);
 }
 

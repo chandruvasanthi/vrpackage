@@ -1,5 +1,16 @@
+
 import './Footer.css'
-import { FaInstagram,FaWhatsapp, FaArrowUp, FaMapMarkerAlt,} from 'react-icons/fa'
+
+import {
+  FaInstagram,
+  FaWhatsapp,
+  FaArrowUp,
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaChevronRight,
+} from 'react-icons/fa'
+
 import { Link } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'
 
@@ -9,6 +20,22 @@ const scrollToTop = () => {
     behavior: 'smooth',
   })
 }
+
+const quickLinks = [
+  { name: 'Home', path: '/#home' },
+  { name: 'About', path: '/#about' },
+  { name: 'Products', path: '/#products' },
+  { name: 'Process', path: '/#process' },
+  { name: 'Contact', path: '/#contact' },
+]
+
+const products = [
+  { name: 'Corrugated Boxes', path: '/product/corrugated-boxes' },
+  { name: 'Printed Boxes', path: '/product/Printed Packaging Boxes' },
+  { name: 'Heavy Duty Boxes', path: '/product/Heavy Duty Boxes' },
+  { name: 'Corrugated Rolls', path: '/product/Corrugated Rolls' },
+  { name: 'Corrugated Sheets', path: '/product/Corrugated Sheets' },
+]
 
 function Footer() {
   return (
@@ -31,7 +58,7 @@ function Footer() {
             <a href="/#home" className="footer-logo">
               <img
                 src="https://i.ibb.co/5xYQJVFL/16ec22a5-bc2c-4640-9249-35f514835786.png"
-                alt="VR Logo"
+                alt="VR Package Logo"
                 className="footer-logo-image"
               />
 
@@ -42,33 +69,24 @@ function Footer() {
             </a>
 
             {/* Animated skeleton box */}
-            <div
-              className="footer-box-animation"
-              aria-hidden="true"
-            >
-              <svg
-                viewBox="0 0 120 110"
-                className="footer-box-svg"
-              >
-                {/* Box front */}
+            <div className="footer-box-animation" aria-hidden="true">
+              <svg viewBox="0 0 120 110" className="footer-box-svg">
+
                 <path
                   className="box-line box-main"
                   d="M20 39 L60 57 L100 39 L100 78 L60 98 L20 78 Z"
                 />
 
-                {/* Box top */}
                 <path
                   className="box-line box-top"
                   d="M20 39 L60 18 L100 39 L60 57 Z"
                 />
 
-                {/* Box folds */}
                 <path
                   className="box-line box-fold"
                   d="M60 57 L60 98 M60 18 L60 57 M20 39 L20 78 M100 39 L100 78"
                 />
 
-                {/* Open box flaps */}
                 <path
                   className="box-line box-flap box-flap-left"
                   d="M20 39 L7 19 L45 4 L60 18"
@@ -78,6 +96,7 @@ function Footer() {
                   className="box-line box-flap box-flap-right"
                   d="M60 18 L76 4 L113 19 L100 39"
                 />
+
               </svg>
             </div>
 
@@ -88,6 +107,7 @@ function Footer() {
             high-quality corrugated boxes in Salem.
           </p>
 
+          {/* Social links */}
           <div className="footer-socials">
 
             <a href="#" aria-label="Instagram">
@@ -103,26 +123,29 @@ function Footer() {
               <FaWhatsapp />
             </a>
 
-            <Link
-              to="/location"
-              aria-label="View factory location"
-            >
+            <Link to="/location" aria-label="View factory location">
               <FaMapMarkerAlt />
             </Link>
 
           </div>
         </div>
 
-        {/* Quick links */}
+        {/* Quick Links */}
         <div className="footer-links">
 
           <h3>Quick Links</h3>
 
-          <HashLink smooth to="/#home">Home</HashLink>
-          <HashLink smooth to="/#about">About</HashLink>
-          <HashLink smooth to="/#products">Products</HashLink>
-          <HashLink smooth to="/#process">Process</HashLink>
-          <HashLink smooth to="/#contact">Contact</HashLink>
+          {quickLinks.map((item) => (
+            <HashLink
+              key={item.name}
+              smooth
+              to={item.path}
+              className="footer-nav-link"
+            >
+              <FaChevronRight className="footer-link-arrow" />
+              <span>{item.name}</span>
+            </HashLink>
+          ))}
 
         </div>
 
@@ -131,25 +154,16 @@ function Footer() {
 
           <h3>Our Products</h3>
 
-          <Link to="/product/corrugated-boxes">
-            Corrugated Boxes
-          </Link>
-
-          <Link to="/product/Printed Packaging Boxes">
-            Printed Boxes
-          </Link>
-
-          <Link to="/product/Heavy Duty Boxes">
-            Heavy Duty Boxes
-          </Link>
-
-          <Link to="/product/Corrugated Rolls">
-            Corrugated Rolls
-          </Link>
-
-          <Link to="/product/Corrugated Sheets">
-            Corrugated Sheets
-          </Link>
+          {products.map((item) => (
+            <Link
+              key={item.name}
+              to={item.path}
+              className="footer-nav-link"
+            >
+              <FaChevronRight className="footer-link-arrow" />
+              <span>{item.name}</span>
+            </Link>
+          ))}
 
         </div>
 
@@ -158,15 +172,48 @@ function Footer() {
 
           <h3>Contact Info</h3>
 
-          <a href="tel:6381506536">
-            <p>+91 6381506536</p>
+          <a href="tel:+916381506536" className="footer-contact-item">
+
+            <span className="footer-contact-icon">
+              <FaPhoneAlt />
+            </span>
+
+            <span className="footer-contact-text">
+              +91 6381506536
+            </span>
+
           </a>
 
-          <a href="mailto:chandrutas007@gmail.com">
-            <p>vrpackageofficial@gmail.com</p>
+          <a
+            href="mailto:vrpackageofficial@gmail.com"
+            className="footer-contact-item"
+          >
+
+            <span className="footer-contact-icon">
+              <FaEnvelope />
+            </span>
+
+            <span className="footer-contact-text">
+              vrpackageofficial@gmail.com
+            </span>
+
           </a>
 
-          <p>Salem, Tamil Nadu.</p>
+          <Link
+            to="/location"
+            className="footer-contact-item"
+            aria-label="View factory location"
+          >
+
+            <span className="footer-contact-icon">
+              <FaMapMarkerAlt />
+            </span>
+
+            <span className="footer-contact-text">
+              Salem, Tamil Nadu
+            </span>
+
+          </Link>
 
         </div>
 
