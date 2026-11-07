@@ -16,6 +16,7 @@ function Navbar() {
         <div className="logo-icon">
           <img
             src="https://i.ibb.co/5xYQJVFL/16ec22a5-bc2c-4640-9249-35f514835786.png"
+            
             alt="VR Logo"
             className="logo-image"
           />
