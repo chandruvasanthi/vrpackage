@@ -1,227 +1,340 @@
+/* ============================================
+   VR PACKAGE - HERO SECTION
+============================================ */
 
-.hero {
+.vr-hero {
   position: relative;
   isolation: isolate;
+
   width: 100%;
-  min-height: 100vh;
-  min-height: 100svh;
+  /* height: clamp(560px, 82svh, 760px); */
+  min-height: 560px;
+
   display: flex;
   align-items: center;
+
   overflow: hidden;
-  background-color: #090a0f;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: background-image 0.5s ease;
+  box-sizing: border-box;
+
+  background: #090a0f;
+  color: #ffffff;
 }
 
-.hero::before {
-  content: '';
+/* ============================================
+   BACKGROUND IMAGE
+============================================ */
+
+.vr-hero-background {
   position: absolute;
   inset: 0;
-  z-index: -1;
-  pointer-events: none;
+  z-index: -3;
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  animation: vrBackgroundReveal 0.9s ease both;
+}
+
+@keyframes vrBackgroundReveal {
+  from {
+    opacity: 0.65;
+    transform: scale(1.025);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ============================================
+   BACKGROUND OVERLAY
+============================================ */
+
+.vr-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
   background:
-    radial-gradient(
-      circle at 78% 48%,
-      rgba(242, 93, 41, 0.12),
-      transparent 38%
+    linear-gradient(
+      90deg,
+      rgba(7, 9, 12, 0.98) 0%,
+      rgba(7, 9, 12, 0.92) 30%,
+      rgba(7, 9, 12, 0.76) 48%,
+      rgba(7, 9, 12, 0.30) 75%,
+      rgba(7, 9, 12, 0.12) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(7, 9, 12, 0.85) 0%,
+      transparent 45%
     );
 }
 
-/* ==================================
-   HERO CONTAINER
-================================== */
+/* ============================================
+   MAIN CONTAINER
+============================================ */
 
-.hero-inner {
+.vr-hero-container {
+  position: relative;
+  z-index: 2;
+
   width: 100%;
-  max-width: 1440px;
+  max-width: 1500px;
+
   margin: 0 auto;
-  padding: 140px 8% 110px;
+
+  padding: 133px 5.5% 100px;
+
+  box-sizing: border-box;
 }
 
-.hero-content {
-  width: 100%;
-  max-width: 850px;
-  opacity: 0;
+/* ============================================
+   CONTENT
+============================================ */
+
+.vr-hero-content {
+  width: 54%;
+  max-width: 760px;
+
+  animation: vrContentReveal 0.65s ease both;
 }
 
-.hero-content.animate {
-  animation: heroTextAnimation 0.8s ease forwards;
+@keyframes vrContentReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* ==================================
+/* ============================================
    EYEBROW
-================================== */
+============================================ */
 
-.hero-eyebrow {
+.vr-hero-eyebrow {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 24px;
-  color: #ff9a52;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 3px;
+  gap: 14px;
+
+  margin-bottom: 20px;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
 }
 
-.hero-eyebrow-line {
-  display: inline-block;
-  width: 12px;
+.vr-eyebrow-line {
+  width: 15px;
   height: 2px;
   flex-shrink: 0;
+
   background: #f25d29;
-  box-shadow: 0 0 12px rgba(242, 93, 41, 0.4);
+  border-radius: 10px;
 }
 
-/* ==================================
+/* ============================================
    HEADING
-================================== */
+============================================ */
 
-.hero-content h1 {
-  max-width: 850px;
+.vr-hero-content h1 {
   margin: 0;
+
   color: #ffffff;
-  font-size: clamp(2.8rem, 5vw, 4.6rem);
-  font-weight: 750;
-  line-height: 1.12;
-  letter-spacing: -1.8px;
-  text-wrap: balance;
+
+  font-size: clamp(42px, 4.5vw, 70px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -2.3px;
+
+  overflow-wrap: break-word;
 }
 
-/* ==================================
+.vr-hero-highlight {
+  display: block;
+  /* color: #f25d29; */
+    color: #ffffff;
+}
+
+/* ============================================
    DESCRIPTION
-================================== */
+============================================ */
 
-.hero-content p {
-  max-width: 650px;
-  margin: 28px 0 34px;
-  color: #c5c7d0;
-  font-size: 1.08rem;
-  font-weight: 400;
-  line-height: 1.9;
+.vr-hero-description {
+  max-width: 550px;
+
+  margin: 21px 0 0;
+
+  color: rgba(255, 255, 255, 0.83);
+
+  font-size: 16px;
+  line-height: 1.75;
 }
 
-/* ==================================
+/* ============================================
    BUTTONS
-================================== */
+============================================ */
 
-.hero-buttons {
+.vr-hero-buttons {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 16px;
+
+  margin-top: 32px;
 }
 
-.hero-link {
-  display: inline-flex;
-  text-decoration: none;
-}
-
-#gqbtn,
-.outline-btn {
+.vr-hero-btn {
   min-height: 54px;
+  padding: 0 25px;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
-  padding: 15px 25px;
+  gap: 13px;
+
   border-radius: 8px;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 0.95rem;
-  font-weight: 650;
-  transition:
-    background 0.3s ease,
-    color 0.3s ease,
-    border-color 0.3s ease,
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  transition: 0.25s ease;
 }
 
-#gqbtn {
-  border: 1px solid #f25d29;
+.vr-hero-btn svg {
+  font-size: 16px;
+  transition: transform 0.25s ease;
+}
+
+.vr-hero-btn:hover svg {
+  transform: translateX(5px);
+}
+
+/* Primary button */
+
+.vr-hero-btn-primary {
+  color: #ffffff;
+
   background: #f25d29;
+  border: 1px solid #f25d29;
+
+  box-shadow: 0 5px 20px rgba(242, 93, 41, 0.25);
+}
+
+.vr-hero-btn-primary:hover {
+  background: #ff8c3c;
+  border-color: #ff8c3c;
+  transform: translateY(-2px);
+}
+
+/* Secondary button */
+
+.vr-hero-btn-outline {
   color: #ffffff;
+
+  background: rgba(9, 10, 15, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.7);
 }
 
-#gqbtn:hover {
-  background: linear-gradient(135deg, #f25d29, #ff9a52);
-  border-color: #ff9a52;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 28px rgba(242, 93, 41, 0.23);
+.vr-hero-btn-outline:hover {
+  color: #ff8c3c;
+
+  border-color: #ff8c3c;
+  background: rgba(9, 10, 15, 0.65);
+
+  transform: translateY(-2px);
 }
 
-.outline-btn {
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  background: rgba(255, 255, 255, 0.035);
-  color: #ffffff;
-  backdrop-filter: blur(8px);
-}
-
-.outline-btn:hover {
-  background: #ffffff;
-  border-color: #ffffff;
-  color: #090a0f;
-  transform: translateY(-3px);
-}
-
-.hero-btn-arrow {
-  font-size: 1.1rem;
-  transition: transform 0.3s ease;
-}
-
-.hero-link:hover .hero-btn-arrow {
-  transform: translate(3px, -2px);
-}
-
-/* ==================================
+/* ============================================
    SLIDE INDICATORS
-================================== */
+============================================ */
 
-.hero-slide-indicators {
+.vr-hero-slider-controls {
+  position: absolute;
+  z-index: 4;
+
+  left: 50%;
+  bottom: 25px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: max-content;
+}
+
+.vr-hero-indicators {
   display: flex;
   align-items: center;
   gap: 9px;
-  margin-top: 52px;
 }
 
-.hero-indicator {
-  width: 24px;
-  height: 4px;
+.vr-hero-indicators button {
+
+ width: 6px;
+    height: 6px;
+    border-radius: 50px;
   padding: 0;
-  border: none;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.32);
+  border: 0;
+  
+
+  background: rgba(255, 255, 255, 0.35);
+
   cursor: pointer;
-  transition:
-    width 0.3s ease,
-    background 0.3s ease;
+
+  transition: 0.3s ease;
 }
 
-.hero-indicator.active {
+.vr-hero-indicators button.active {
   background: #f25d29;
 }
 
-.hero-slide-count {
+/* ============================================
+   SCROLL BUTTON
+============================================ */
+
+.vr-hero-scroll {
+  position: absolute;
+  z-index: 4;
+
+  right: 5.5%;
+  bottom: 15px;
+
+  width: 45px;
+  height: 45px;
+
   display: flex;
   align-items: center;
-  gap: 7px;
-  margin-left: 10px;
-  color: #858792;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
+  justify-content: center;
+
+  color: #f25d29;
+
+  border: 2px solid #f25d29;
+  border-radius: 50%;
+
+  text-decoration: none;
+  font-size: 16px;
+
+  transition: 0.25s ease;
 }
 
-.hero-slide-count > span:first-child {
-  color: #ff9a52;
-  font-weight: 700;
+.vr-hero-scroll:hover {
+  color: #ffffff;
+  background: #f25d29;
+  transform: translateY(3px);
 }
-
-.hero-count-divider {
-  color: #575964;
-}
-
 /* ==================================
    BOTTOM LABEL
 ================================== */
@@ -246,248 +359,351 @@
   background: #f25d29;
   box-shadow: 0 0 12px rgba(242, 93, 41, 0.65);
 }
-
-/* ==================================
-   ANIMATION
-================================== */
-
-@keyframes heroTextAnimation {
-  0% {
-    opacity: 0;
-    transform: translateY(28px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ==================================
+/* ============================================
    LARGE DESKTOP
-================================== */
+============================================ */
 
-@media (min-width: 1600px) {
-  .hero-inner {
-    padding-right: 100px;
-    padding-left: 100px;
+@media (min-width: 1400px) {
+  .vr-hero-content {
+    width: 55%;
+  }
+
+  .vr-hero-content h1 {
+    font-size: 72px;
+  }
+
+  .vr-hero-description {
+    font-size: 17px;
   }
 }
 
-/* ==================================
-   LAPTOP / TABLET
-================================== */
+/* ============================================
+   LAPTOP
+============================================ */
 
-@media (max-width: 1024px) {
-  .hero {
-    min-height: 85vh;
-    min-height: 85svh;
+@media (max-width: 1200px) {
+  .vr-hero-content {
+    width: 58%;
   }
 
-  .hero-inner {
-    padding: 120px 6% 100px;
-  }
-
-  .hero-content {
-    max-width: 720px;
-  }
-
-  .hero-content h1 {
-    font-size: clamp(2.5rem, 5.5vw, 3.7rem);
-  }
-
-  .hero-bottom-label {
-    right: 6%;
+  .vr-hero-content h1 {
+    font-size: clamp(42px, 5vw, 60px);
   }
 }
 
-/* ==================================
-   TABLET / MOBILE
-================================== */
+/* ============================================
+   TABLET
+============================================ */
 
-@media (max-width: 768px) {
-  .hero {
-    min-height: 760px;
-    min-height: 90svh;
+@media (max-width: 950px) {
+  .vr-hero {
+    height: 680px;
+    min-height: 600px;
+  }
+
+  .vr-hero-background {
     background-position: 60% center;
   }
 
-  .hero-inner {
-    padding: 120px 5% 105px;
+  .vr-hero-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(7, 9, 12, 0.97),
+        rgba(7, 9, 12, 0.86) 48%,
+        rgba(7, 9, 12, 0.42) 100%
+      ),
+      linear-gradient(
+        0deg,
+        rgba(7, 9, 12, 0.90),
+        transparent 55%
+      );
   }
 
-  .hero-content {
-    max-width: 620px;
+  .vr-hero-container {
+    padding: 118px 5% 100px;
   }
 
-  .hero-eyebrow {
-    margin-bottom: 20px;
-    font-size: 0.72rem;
-    letter-spacing: 2.5px;
+  .vr-hero-content {
+    width: 68%;
   }
 
-  .hero-content h1 {
-    font-size: clamp(2.2rem, 6vw, 3.2rem);
-    line-height: 1.2;
-    letter-spacing: -0.8px;
+  .vr-hero-content h1 {
+    font-size: clamp(40px, 5.8vw, 55px);
+    letter-spacing: -1.7px;
   }
 
-  .hero-content p {
-    margin: 22px 0 28px;
-    font-size: 1rem;
-    line-height: 1.8;
+  .vr-hero-description {
+    max-width: 450px;
+    font-size: 14px;
   }
 
-  .hero-slide-indicators {
-    margin-top: 35px;
-  }
-
-  .hero-bottom-label {
-    right: auto;
-    left: 5%;
-    bottom: 25px;
-  }
-  .hero-indicator{
-    width: 6px;
-    height: 6px;
-    border-radius: 50px;
-  }
-  .hero-slide-indicators{
-    align-items: center;
-    justify-content: center;
-  }
+  
 }
 
-/* ==================================
-   SMALL MOBILE
-================================== */
+/* ============================================
+   MOBILE
+============================================ */
 
-@media (max-width: 480px) {
-  .hero {
-    min-height: 720px;
-    min-height: 88svh;
-    background-position: 58% center;
-  }
+@media (max-width: 600px) {
+  .vr-hero {
+    height: auto;
+    min-height: 100svh;
+    max-height: none;
 
-  .hero-inner {
-    padding: 110px 5% 100px;
-  }
-
-  .hero-content h1 {
-    font-size: clamp(30px, 8vw, 36px);
-    line-height: 1.2;
-    letter-spacing: -0.8px;
-  }
-
-  .hero-content p {
-    margin: 18px 0 24px;
-    font-size: 0.94rem;
-    line-height: 1.7;
-  }
-
-  .hero-buttons {
-    align-items: stretch;
+    display: flex;
     flex-direction: column;
-    gap: 12px;
-  }
-
-  .hero-link {
-    width: 100%;
-  }
-
-  #gqbtn,
-  .outline-btn {
-    width: 100%;
-    min-height: 50px;
-    padding: 13px 18px;
-    font-size: 0.9rem;
-  }
-
-  .hero-slide-indicators {
-    margin-top: 30px;
-  }
-
-  .hero-bottom-label {
-    bottom: 20px;
-    font-size: 0.68rem;
-  }
-  .hero-indicator{
-    width: 6px;
-    height: 6px;
-    border-radius: 50px;
-  }
-  .hero-slide-indicators{
-    align-items: center;
     justify-content: center;
   }
-}
 
-/* ==================================
-   VERY SMALL MOBILE
-================================== */
+  /* Mobile image position */
 
-@media (max-width: 350px) {
-  .hero {
-    min-height: 700px;
-    min-height: 86svh;
-    background-position: 55% center;
+  .vr-hero-background {
+    background-size: auto 100%;
+    background-position: 70% center;
+    background-repeat: no-repeat;
   }
 
-  .hero-inner {
-    padding: 105px 4% 95px;
+  
+
+  /* Main content */
+
+  .vr-hero-container {
+    padding: 105px 24px 100px;
   }
 
-  .hero-content h1 {
-    font-size: 28px;
-    line-height: 1.2;
-    letter-spacing: -0.6px;
+  .vr-hero-content {
+    width: 100%;
+    max-width: 480px;
   }
 
-  .hero-content p {
-    font-size: 0.85rem;
+  .vr-hero-eyebrow {
+    gap: 9px;
+    margin-bottom: 18px;
+
+    font-size: 10px;
+    letter-spacing: 1.4px;
+  }
+
+  .vr-eyebrow-line {
+    width: 32px;
+    height: 3px;
+  }
+
+  .vr-hero-content h1 {
+    /* font-size: clamp(36px, 8.5vw, 48px);
+    line-height: 1.13;
+    letter-spacing: -1.5px; */
+     font-size: clamp(34px, 8vw, 44px);
+    line-height: 1.15;
+    letter-spacing: -1.2px;
+  }
+
+  .vr-hero-description {
+    max-width: 420px;
+    margin-top: 17px;
+
+    font-size: 14px;
     line-height: 1.7;
   }
 
-  .hero-eyebrow {
-    font-size: 0.62rem;
-    letter-spacing: 1.8px;
+  /* Buttons */
+
+  .vr-hero-buttons {
+    gap: 11px;
+    margin-top: 24px;
   }
 
-  .hero-slide-indicators {
-    margin-top: 25px;
+  .vr-hero-btn {
+    min-height: 46px;
+    padding: 0 17px;
+    gap: 9px;
+    font-size: 12px;
+    width: 100%;
   }
 
-  .hero-bottom-label {
-    font-size: 0.62rem;
+  .vr-hero-btn svg {
+    font-size: 13px;
   }
-  .hero-indicator{
+
+  /* Controls */
+
+ .vr-hero-slider-controls {
+    left: 50%;
+    bottom: 100px;
+    transform: translateX(-50%);
+    width: max-content;
+  }
+
+  .vr-hero-indicators {
+    gap: 6px;
+  }
+
+  .vr-hero-indicators button {
     width: 6px;
     height: 6px;
     border-radius: 50px;
   }
-  .hero-slide-indicators{
-    align-items: center;
-    justify-content: center;
+
+  
+
+  /* Scroll button */
+
+  .vr-hero-scroll {
+    right: 22px;
+    bottom: 13px;
+
+    width: 38px;
+    height: 38px;
+
+    font-size: 13px;
   }
 }
 
-/* ==================================
+/* ============================================
+   SMALL PHONES
+============================================ */
+
+@media (max-width: 400px) {
+  .vr-hero-background {
+    background-size: auto 100%;
+    background-position: 72% center;
+  }
+
+  .vr-hero-container {
+    padding: 95px 19px 95px;
+  }
+
+  .vr-hero-content h1 {
+    /* font-size: clamp(34px, 9vw, 40px);
+    letter-spacing: -1.2px; */
+      font-size: 30px;
+    line-height: 1.16;
+    letter-spacing: -1px;
+  }
+
+  .vr-hero-description {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .vr-hero-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .vr-hero-btn {
+    min-width: 190px;
+    min-height: 44px;
+  }
+
+  .vr-hero-slider-controls {
+    left: 19px;
+  }
+}
+
+/* ============================================
+   VERY SMALL PHONES
+============================================ */
+
+@media (max-width: 340px) {
+  .vr-hero-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .vr-hero-content h1 {
+    /* font-size: 33px; */
+    font-size: 27px;
+    line-height: 1.18;
+    letter-spacing: -0.8px;
+  }
+
+  .vr-hero-eyebrow {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .vr-hero-slider-controls {
+    left: 16px;
+  }
+
+  .vr-hero-indicators button {
+    width: 16px;
+  }
+
+  .vr-hero-indicators button.active {
+    width: 27px;
+  }
+}
+
+/* ============================================
+   SHORT DESKTOP SCREENS
+============================================ */
+
+@media (min-width: 601px) and (max-height: 700px) {
+  .vr-hero {
+    height: 580px;
+    min-height: 580px;
+  }
+
+  .vr-hero-container {
+    padding-top: 115px;
+    padding-bottom: 85px;
+  }
+
+  .vr-hero-content h1 {
+    font-size: clamp(40px, 4vw, 58px);
+  }
+
+  .vr-hero-description {
+    margin-top: 14px;
+    font-size: 14px;
+  }
+
+  .vr-hero-buttons {
+    margin-top: 22px;
+  }
+
+  .vr-hero-btn {
+    min-height: 48px;
+  }
+}
+
+/* ============================================
    ACCESSIBILITY
-================================== */
+============================================ */
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-content.animate {
+  .vr-hero-background,
+  .vr-hero-content {
     animation: none;
-    opacity: 1;
-    transform: none;
   }
 
-  .hero,
-  .hero *,
-  .hero *::before,
-  .hero *::after {
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
+  .vr-hero-btn,
+  .vr-hero-btn svg,
+  .vr-hero-indicators button,
+  .vr-hero-scroll {
+    transition: none;
+  }
+}
+
+
+/* Keep slider indicators centered on every screen */
+.vr-hero-slider-controls {
+  position: absolute !important;
+  left: 50% !important;
+  right: auto !important;
+  width: max-content !important;
+  transform: translateX(-50%) !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .vr-hero-slider-controls {
+    bottom: 100px;
   }
 }

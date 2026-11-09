@@ -1,12 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-import {
-  FaLightbulb,
-  FaBoxOpen,
-  FaShieldHalved,
-  FaArrowRight,
-} from 'react-icons/fa6';
+import { FaLightbulb, FaBoxOpen, FaShieldHalved, FaArrowRight,} from 'react-icons/fa6';
 
 import './CorrugatedBox3D.css';
 

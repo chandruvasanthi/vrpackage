@@ -9,13 +9,14 @@ function ProductDetails() {
   const industries = [
     "E-Commerce",
     "Food & Beverage",
-    "Electronics",
+    "Electrical & Electronics",
     "Pharmaceuticals",
     "Retail Packaging",
     "Logistics & Shipping",
     "FMCG Products",
     "Textile & Garments",
     "Automotive Industry",
+    "Industrial manufacturing",
   ];
 
   const row1 = industries.slice(0, 5);

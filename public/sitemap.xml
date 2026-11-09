@@ -11,6 +11,21 @@
   <loc>https://vrpackage.vercel.app/</loc>
   <lastmod>2026-06-03T08:47:07+00:00</lastmod>
 </url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <url>
+    <loc>https://vrpackage.vercel.app/</loc>
+  </url>
+
+  <url>
+    <loc>https://vrpackage.vercel.app/products</loc>
+  </url>
+
+  <url>
+    <loc>https://vrpackage.vercel.app/get-quote</loc>
+  </url>
+
+</urlset>
 
 </urlset>
