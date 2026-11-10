@@ -36,4 +36,5 @@ const processData = [
     description: 'Orders are delivered safely within the committed timeline.'
   }
 ];
+
 export default processData;

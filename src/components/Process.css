@@ -1,643 +1,1387 @@
-.process-section {
+
+/* =========================================
+   JOURNEY SECTION
+========================================= */
+
+.journey-section {
+  --journey-orange: #ff7138;
+  --journey-orange-light: #ff9864;
+
   width: 100%;
-  padding: 110px 0 120px;
   position: relative;
   overflow: hidden;
-  background:
-    radial-gradient(
-      ellipse at 50% 0%,
-      rgba(242, 93, 41, 0.12),
-      transparent 45%
-    ),
-    #090a0f;
+  isolation: isolate;
+
+  padding: 105px 0 95px;
+
+  background: #090b10;
+  color: #ffffff;
 }
 
-/* ================================
-   SECTION HEADING
-================================ */
 
-.process-heading {
-  text-align: center;
-  margin-bottom: 65px;
-  padding: 0 20px;
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.journey-grid {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,0.018) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.018) 1px,
+      transparent 1px
+    );
+
+  background-size: 75px 75px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.journey-bg-orb {
+  position: absolute;
+  z-index: -1;
+
+  border-radius: 50%;
+  pointer-events: none;
+
+  filter: blur(100px);
+}
+
+.journey-orb-one {
+  width: 400px;
+  height: 400px;
+
+  top: -200px;
+  left: 15%;
+
+  background: rgba(255,105,50,0.09);
+}
+
+.journey-orb-two {
+  width: 350px;
+  height: 350px;
+
+  right: -180px;
+  bottom: -100px;
+
+  background: rgba(255,105,50,0.06);
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.journey-container {
+  width: min(1320px, calc(100% - 100px));
+  margin: 0 auto;
+
   position: relative;
   z-index: 1;
 }
 
-.process-heading h2 {
-  color: #ffffff;
-  /* font-size: 46px; */
-    font-size: clamp(38px, 4.3vw, 61px);
-  font-weight: 800;
-  letter-spacing: -1.5px;
-  line-height: 1.2;
-  margin: 0;
-  position: relative;
-  display: inline-block;
-}
 
-.process-heading h2::after {
-  content: '';
-  display: block;
-  width: 65px;
-  height: 4px;
-  margin: 18px auto 0;
-  border-radius: 10px;
-  background: linear-gradient(90deg, #f25d29, #ff8c3c);
-  box-shadow: 0 0 18px rgba(242, 93, 41, 0.4);
-}
+/* =========================================
+   HEADER
+========================================= */
 
-/* ================================
-   CAROUSEL VIEWPORT
-================================ */
-
-.horizontal-scroll {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  padding: 15px 0 25px;
-
-  cursor: grab;
-  touch-action: pan-y;
-  user-select: none;
-  -webkit-user-select: none;
-
-  -webkit-mask-image: linear-gradient(
-    90deg,
-    transparent,
-    #000 5%,
-    #000 95%,
-    transparent
-  );
-
-  mask-image: linear-gradient(
-    90deg,
-    transparent,
-    #000 5%,
-    #000 95%,
-    transparent
-  );
-}
-
-.horizontal-scroll:active {
-  cursor: grabbing;
-}
-
-/* ================================
-   MOVING TRACK
-================================ */
-
-.process-track {
+.journey-header {
   display: flex;
-  align-items: stretch;
-  gap: 24px;
-  width: max-content;
-
-  will-change: transform;
-  backface-visibility: hidden;
-  transform: translateZ(0);
+  justify-content: space-between;
+  align-items: flex-end;
+ 
+  gap: 50px;
+  margin-bottom: 65px;
 }
 
-/* Each set contains one complete list of cards */
-
-.process-card-set {
-  display: flex;
-  align-items: stretch;
-  flex-shrink: 0;
-  gap: 24px;
-  width: max-content;
+.journey-heading-left {
+  flex: 1;
 }
 
-/* ================================
-   PROCESS CARD
-================================ */
-
-.process-card {
-  width: 310px;
-  min-height: 300px;
-  padding: 27px;
-
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  flex-shrink: 0;
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  border-radius: 22px;
-
-  background: linear-gradient(
-    145deg,
-    rgba(25, 26, 31, 0.98),
-    rgba(13, 14, 18, 0.98)
-  );
-
-  box-shadow:
-    0 15px 40px rgba(0, 0, 0, 0.22),
-    inset 0 1px 0 rgba(255, 255, 255, 0.025);
-
-  transition:
-    border-color 0.35s ease,
-    box-shadow 0.35s ease,
-    background 0.35s ease;
-}
-
-.process-card:hover {
-  border-color: rgba(242, 93, 41, 0.55);
-
-  background: linear-gradient(
-    145deg,
-    rgba(34, 27, 25, 0.99),
-    rgba(15, 15, 19, 0.99)
-  );
-
-  box-shadow:
-    0 22px 50px rgba(0, 0, 0, 0.32),
-    0 0 30px rgba(242, 93, 41, 0.08);
-}
-
-/* ================================
-   CARD TOP LABEL
-================================ */
-
-.card-top-line {
-  width: 100%;
+.journey-eyebrow {
   display: flex;
   align-items: center;
   gap: 12px;
 
-  margin-bottom: 25px;
+  margin-bottom: 22px;
 
-  position: relative;
-  z-index: 1;
+  /* color: var(--journey-orange); */
+ color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
 }
 
-.card-step {
-  color: #ff8c3c;
+.eyebrow-line {
+  width: 30px;
+  height: 1px;
+  background: var(--journey-orange);
+}
+
+.eyebrow-dot {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+  background: var(--journey-orange);
+}
+
+.journey-heading-left h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(42px, 5.3vw, 72px);
+  line-height: 1.08;
+
+  font-weight: 800;
+  letter-spacing: -3px;
+}
+
+.journey-heading-left h2 span {
+  color: var(--journey-orange);
+}
+
+.journey-heading-right {
+  width: 380px;
+  flex-shrink: 0;
+  padding-bottom: 7px;
+}
+
+.journey-heading-right > p {
+  margin: 0 0 20px;
+
+  color: #a2a5af;
+
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.journey-header-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #d9d9de;
+
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.note-indicator {
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  background: var(--journey-orange);
+  border-radius: 50%;
+
+  box-shadow: 0 0 12px rgba(255,113,56,0.7);
+}
+
+
+/* =========================================
+   TOOLBAR
+========================================= */
+
+.journey-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 16px;
+
+  border-bottom: 1px solid rgba(255,255,255,0.09);
+}
+
+.journey-counter {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.counter-label {
+  color: #ffffff;
+
   font-size: 10px;
   font-weight: 800;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
 }
 
-.card-line {
+.counter-divider {
+  width: 25px;
   height: 1px;
-  flex: 1;
 
-  background: linear-gradient(
-    90deg,
-    rgba(242, 93, 41, 0.55),
-    rgba(255, 255, 255, 0.04)
-  );
+  background: rgba(255,255,255,0.25);
 }
 
-/* ================================
-   BACKGROUND CARD NUMBER
-================================ */
+.counter-total {
+  color: #858894;
 
-.card-number {
-  position: absolute;
-  top: 48px;
-  right: 20px;
-  z-index: -1;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
 
-  font-size: 82px;
-  line-height: 1;
-  font-weight: 900;
-  letter-spacing: -5px;
 
-  color: rgba(255, 255, 255, 0.045);
-  pointer-events: none;
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.journey-navigation {
+  display: flex;
+  gap: 9px;
+}
+
+.journey-nav-btn {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.035);
+
+  color: #ffffff;
+  font-size: 19px;
+
+  cursor: pointer;
 
   transition:
-    color 0.35s ease,
-    transform 0.35s ease;
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
 }
 
-.process-card:hover .card-number {
-  color: rgba(242, 93, 41, 0.12);
-  transform: translateY(-3px);
+.journey-nav-btn:hover {
+  background: var(--journey-orange);
+  border-color: var(--journey-orange);
+  transform: translateY(-2px);
 }
 
-/* ================================
-   PROCESS ICON
-================================ */
+.journey-nav-btn:focus-visible {
+  outline: 2px solid var(--journey-orange-light);
+  outline-offset: 4px;
+}
 
-.card-icon {
-  width: 58px;
-  height: 58px;
+
+/* =========================================
+   TIMELINE VIEWPORT
+========================================= */
+
+.journey-viewport {
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  padding: 25px 2px 15px;
+
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,113,56,0.6) transparent;
+
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.journey-viewport::-webkit-scrollbar {
+  height: 4px;
+}
+
+.journey-viewport::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+}
+
+.journey-viewport::-webkit-scrollbar-thumb {
+  background: rgba(255,113,56,0.65);
+  border-radius: 10px;
+}
+
+.journey-track {
+  display: flex;
+  align-items: stretch;
+
+  gap: 16px;
+
+  width: max-content;
+  min-width: 100%;
+}
+
+
+/* =========================================
+   PROCESS CARD
+========================================= */
+
+.journey-card {
+  width: 270px;
   flex-shrink: 0;
 
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
 
   position: relative;
-  z-index: 1;
+}
 
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 17px;
 
-  background: linear-gradient(
-    135deg,
-    #f25d29,
-    #ff8c3c
-  );
+/* =========================================
+   TIMELINE NODE
+========================================= */
 
-  color: #ffffff;
-  font-size: 25px;
+.journey-node-area {
+  height: 26px;
 
-  box-shadow:
-    0 9px 22px rgba(242, 93, 41, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+
+  position: relative;
+}
+
+.journey-node {
+  width: 12px;
+  height: 12px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid rgba(255,113,56,0.8);
+  border-radius: 50%;
+
+  background: #090b10;
+
+  position: relative;
+  z-index: 2;
 
   transition:
-    transform 0.4s ease,
-    box-shadow 0.4s ease;
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.process-card:hover .card-icon {
-  transform: translateY(-3px) scale(1.05);
+.journey-node span {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+  background: var(--journey-orange);
+}
+
+.journey-node-line {
+  position: absolute;
+
+  height: 1px;
+
+  left: 12px;
+  right: -16px;
+
+  background: linear-gradient(
+    90deg,
+    rgba(255,113,56,0.75),
+    rgba(255,255,255,0.12)
+  );
+}
+
+.journey-card:last-child .journey-node-line {
+  background: linear-gradient(
+    90deg,
+    rgba(255,113,56,0.75),
+    transparent
+  );
+}
+
+
+/* =========================================
+   CARD INNER
+========================================= */
+
+.journey-card-inner {
+  height: 100%;
+  min-height: 285px;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 21px;
+
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 14px;
+
+  background: linear-gradient(
+    145deg,
+    #151820,
+    #101218
+  );
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.journey-card:hover .journey-card-inner {
+  transform: translateY(-6px);
+
+  border-color: rgba(255,113,56,0.55);
+
+  background: linear-gradient(
+    145deg,
+    #1b1a1b,
+    #111319
+  );
 
   box-shadow:
-    0 12px 28px rgba(242, 93, 41, 0.32),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    0 18px 40px rgba(0,0,0,0.25),
+    0 0 30px rgba(255,113,56,0.06);
 }
 
-/* ================================
-   CARD TITLE
-================================ */
+.journey-card:hover .journey-node {
+  background: var(--journey-orange);
 
-.process-card h3 {
+  box-shadow:
+    0 0 0 5px rgba(255,113,56,0.12),
+    0 0 18px rgba(255,113,56,0.45);
+}
+
+
+/* =========================================
+   CARD TOP
+========================================= */
+
+.journey-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   position: relative;
   z-index: 1;
+}
 
-  margin: 24px 0 12px;
+.journey-step-label {
+  color: var(--journey-orange);
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.journey-step-number {
+  color: rgba(255,255,255,0.10);
+
+  font-size: 43px;
+  font-weight: 900;
+
+  letter-spacing: -3px;
+  line-height: 1;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.journey-card:hover .journey-step-number {
+  color: rgba(255,113,56,0.20);
+  transform: translateY(-3px);
+}
+
+
+/* =========================================
+   ICON
+========================================= */
+
+.journey-icon-wrap {
+  margin-top: 19px;
+
+  position: relative;
+  z-index: 1;
+}
+
+.journey-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(255,113,56,0.24);
+
+  background: rgba(255,113,56,0.09);
+
+  color: var(--journey-orange-light);
+
+  font-size: 21px;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease,
+    color 0.35s ease;
+}
+
+.journey-card:hover .journey-icon {
+  transform: rotate(-5deg) scale(1.07);
+
+  background: var(--journey-orange);
+  border-color: var(--journey-orange);
 
   color: #ffffff;
-  font-size: 21px;
-  font-weight: 700;
-  line-height: 1.35;
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.journey-card-content {
+  margin-top: 18px;
+
+  position: relative;
+  z-index: 1;
+}
+
+.journey-card-content h3 {
+  margin: 0 0 9px;
+
+  color: #ffffff;
+
+  font-size: 18px;
+  font-weight: 750;
+
+  line-height: 1.4;
   letter-spacing: -0.4px;
 
   transition: color 0.3s ease;
 }
 
-.process-card:hover h3 {
-  color: #ff8c3c;
+.journey-card:hover .journey-card-content h3 {
+  color: var(--journey-orange-light);
 }
 
-/* ================================
-   CARD DESCRIPTION
-================================ */
+.journey-card-content p {
+  margin: 0;
 
-.process-card p {
+  color: #999eaa;
+
+  font-size: 12px;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+
+/* =========================================
+   CARD FOOTER
+========================================= */
+
+.journey-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: auto;
+  padding-top: 17px;
+
   position: relative;
   z-index: 1;
 
-  margin: 0;
-
-  color: #aeb2bd;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.8;
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
 
-/* ================================
-   ORANGE GLOW
-================================ */
+.journey-card-footer > span:first-child {
+  color: #747985;
 
-.card-glow {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.journey-card-arrow {
+  width: 25px;
+  height: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255,255,255,0.13);
+  border-radius: 50%;
+
+  color: #a9abb4;
+  font-size: 13px;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.journey-card:hover .journey-card-arrow {
+  background: var(--journey-orange);
+  border-color: var(--journey-orange);
+
+  color: #ffffff;
+  transform: rotate(45deg);
+}
+
+
+/* =========================================
+   CARD GLOW
+========================================= */
+
+.journey-card-glow {
   position: absolute;
   z-index: -1;
 
-  top: -100px;
-  right: -100px;
+  width: 170px;
+  height: 170px;
 
-  width: 220px;
-  height: 220px;
+  right: -110px;
+  top: 90px;
+
   border-radius: 50%;
 
-  background: rgba(242, 93, 41, 0.11);
-  filter: blur(55px);
+  background: rgba(255,113,56,0.13);
+
+  filter: blur(60px);
+
+  opacity: 0;
+
+  transition: opacity 0.4s ease;
 
   pointer-events: none;
-
-  transition:
-    opacity 0.4s ease,
-    transform 0.4s ease;
 }
 
-.process-card:hover .card-glow {
-  transform: scale(1.25);
+.journey-card:hover .journey-card-glow {
   opacity: 1;
 }
 
-/* ================================
-   CARD BOTTOM ACCENT
-================================ */
 
-.card-bottom-accent {
-  position: absolute;
-  bottom: 0;
-  left: 27px;
-  right: 27px;
+/* =========================================
+   BOTTOM
+========================================= */
 
-  height: 2px;
-  border-radius: 5px 5px 0 0;
+.journey-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-  background: linear-gradient(
-    90deg,
-    #f25d29,
-    #ff8c3c,
-    transparent
-  );
+  gap: 20px;
 
-  transform: scaleX(0.25);
-  transform-origin: left;
-  opacity: 0.65;
+  padding-top: 19px;
 
-  transition:
-    transform 0.4s ease,
-    opacity 0.4s ease;
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
 
-.process-card:hover .card-bottom-accent {
-  transform: scaleX(1);
-  opacity: 1;
+.journey-bottom-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-/* ================================
-   CAROUSEL INSTRUCTION
-================================ */
+.journey-bottom-dot {
+  width: 6px;
+  height: 6px;
 
-.process-hint {
-  margin: 22px 0 0;
-  padding: 0 16px;
-
-  text-align: center;
-  color: #888b95;
-
-  font-size: 12px;
-  letter-spacing: 0.4px;
+  border-radius: 50%;
+  background: var(--journey-orange);
 }
 
-/* ================================
-   LARGE SCREENS
-================================ */
+.journey-bottom-left p,
+.journey-bottom-right {
+  margin: 0;
+
+  color: #777c88;
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+}
+
+.journey-bottom-right {
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+
+/* =========================================
+   LARGE DESKTOP
+========================================= */
 
 @media (min-width: 1600px) {
-  .process-section {
-    padding: 125px 0 135px;
+
+  .journey-container {
+    width: min(1420px, calc(100% - 140px));
   }
 
-  .process-heading h2 {
-    font-size: 50px;
+  .journey-section {
+    padding: 120px 0 110px;
   }
 
-  .process-card {
-    width: 330px;
-    min-height: 310px;
-    padding: 30px;
+  .journey-card {
+    width: 280px;
   }
+
+  .journey-card-inner {
+    min-height: 295px;
+    padding: 23px;
+  }
+
 }
 
-/* ================================
-   LAPTOPS
-================================ */
+
+/* =========================================
+   LAPTOP
+========================================= */
 
 @media (max-width: 1200px) {
-  .process-section {
-    padding: 100px 0 110px;
+
+  .journey-container {
+    width: calc(100% - 70px);
   }
 
-  .process-heading {
+  .journey-header {
     margin-bottom: 55px;
   }
 
-  .process-heading h2 {
-    font-size: 42px;
+  .journey-heading-right {
+    width: 330px;
   }
 
-  .process-track,
-  .process-card-set {
-    gap: 20px;
+  .journey-card {
+    width: 255px;
   }
 
-  .process-card {
-    width: 285px;
-    min-height: 285px;
-    padding: 25px;
+  .journey-card-inner {
+    min-height: 280px;
+    padding: 19px;
   }
 
-  .card-number {
-    font-size: 74px;
-  }
-
-  .process-card h3 {
-    font-size: 19px;
-  }
 }
 
-/* ================================
-   TABLETS
-================================ */
+
+/* =========================================
+   TABLET
+========================================= */
 
 @media (max-width: 768px) {
-  .process-section {
-    padding: 80px 0 90px;
+
+  .journey-section {
+    padding: 80px 0 75px;
   }
 
-  .process-heading {
+  .journey-container {
+    width: calc(100% - 44px);
+  }
+
+  .journey-header {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 23px;
     margin-bottom: 40px;
   }
+  .journey-heading-left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
 
-  .process-heading h2 {
-    font-size: 35px;
+  }
+  .journey-heading-left h2 {
+    /* font-size: clamp(43px, 8vw, 58px);
+    letter-spacing: -2px; */
+    
+    /* font-size: clamp(43px, 8vw, 58px);
+    letter-spacing: -2px; */
+  
+     font-size: clamp(24px, 6vw, 34px);
     letter-spacing: -1px;
+    white-space: nowrap;
   }
 
-  .process-heading h2::after {
-    width: 52px;
-    height: 3px;
-    margin-top: 14px;
+  .journey-eyebrow {
+    margin-bottom: 18px;
   }
 
-  .horizontal-scroll {
-    padding: 12px 0 20px;
+  .journey-heading-right {
+    width: min(100%, 480px);
   }
 
-  .process-track,
-  .process-card-set {
-    gap: 16px;
-  }
-
-  .process-card {
-    width: 255px;
-    min-height: 265px;
-    padding: 22px;
-    border-radius: 19px;
-  }
-
-  .card-top-line {
-    margin-bottom: 22px;
-  }
-
-  .card-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 15px;
-    font-size: 22px;
-  }
-
-  .card-number {
-    top: 45px;
-    right: 17px;
-    font-size: 65px;
-  }
-
-  .process-card h3 {
-    margin-top: 21px;
-    font-size: 18px;
-  }
-
-  .process-card p {
+  .journey-heading-right > p {
     font-size: 13px;
-    line-height: 1.75;
   }
 
-  .card-bottom-accent {
-    left: 22px;
-    right: 22px;
+  .journey-card {
+    width: 245px;
   }
 
-  .process-hint {
-    margin-top: 16px;
-    font-size: 11px;
-  }
-}
-
-/* ================================
-   MOBILE
-================================ */
-
-@media (max-width: 425px) {
-  .process-section {
-    padding: 65px 0 70px;
+  .journey-card-inner {
+    min-height: 275px;
+    padding: 19px;
   }
 
-  .process-heading {
-    margin-bottom: 32px;
+  .journey-step-number {
+    font-size: 40px;
   }
 
-  .process-heading h2 {
-    font-size: 30px;
-  }
-
-  .process-track,
-  .process-card-set {
-    gap: 14px;
-  }
-
-  .process-card {
-    width: 235px;
-    min-height: 255px;
-    padding: 20px;
-    border-radius: 17px;
-  }
-
-  .card-top-line {
-    margin-bottom: 20px;
-  }
-
-  .card-step {
-    font-size: 9px;
-  }
-
-  .card-icon {
-    width: 48px;
-    height: 48px;
-    font-size: 20px;
-    border-radius: 14px;
-  }
-
-  .card-number {
-    top: 43px;
-    right: 15px;
-    font-size: 58px;
-  }
-
-  .process-card h3 {
-    margin: 20px 0 10px;
+  .journey-card-content h3 {
     font-size: 17px;
   }
 
-  .process-card p {
-    font-size: 12px;
-    line-height: 1.7;
-  }
-
-  .card-bottom-accent {
-    left: 20px;
-    right: 20px;
-  }
 }
 
-/* ================================
-   SMALL PHONES
-================================ */
 
-@media (max-width: 320px) {
-  .process-section {
-    padding: 55px 0 60px;
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .journey-section {
+    padding: 65px 0 60px;
   }
 
-  .process-heading h2 {
-    font-size: 27px;
+  .journey-container {
+    width: calc(100% - 36px);
   }
 
-  .process-card {
-    width: 215px;
-    min-height: 245px;
-    padding: 18px;
+  .journey-header {
+    gap: 19px;
+    margin-bottom: 32px;
   }
 
-  .card-icon {
-    width: 44px;
-    height: 44px;
-    font-size: 18px;
+  .journey-heading-left h2 {
+    /* font-size: 42px;
+    line-height: 1.12;
+    letter-spacing: -2px; */
+   font-size: 25px;
   }
 
-  .card-number {
-    font-size: 52px;
+  .journey-eyebrow {
+    font-size: 9px;
+    letter-spacing: 2px;
   }
 
-  .process-card h3 {
+  .journey-heading-right > p {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .journey-header-note {
+    font-size: 10px;
+  }
+
+  .journey-counter {
+    gap: 8px;
+  }
+
+  .counter-label {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .counter-total {
+    font-size: 8px;
+  }
+
+  .journey-navigation {
+    gap: 6px;
+  }
+
+  .journey-nav-btn {
+    width: 35px;
+    height: 35px;
     font-size: 16px;
   }
 
-  .process-card p {
-    font-size: 11px;
+  .journey-viewport {
+    padding-top: 22px;
+    padding-bottom: 12px;
   }
 
-  .card-bottom-accent {
-    left: 18px;
-    right: 18px;
+  .journey-track {
+    gap: 14px;
+  }
+
+  .journey-card {
+    width: 225px;
+  }
+
+  .journey-card-inner {
+    min-height: 265px;
+    padding: 18px;
+    border-radius: 13px;
+  }
+
+  .journey-step-number {
+    font-size: 38px;
+  }
+
+  .journey-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+
+  .journey-card-content {
+    margin-top: 16px;
+  }
+
+  .journey-card-content h3 {
+    font-size: 16px;
+  }
+
+  .journey-card-content p {
+    font-size: 11px;
+    line-height: 1.7;
+  }
+
+  .journey-card-footer {
+    padding-top: 14px;
+  }
+
+  .journey-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 11px;
+
+    padding-top: 16px;
+  }
+
+  .journey-bottom-left p,
+  .journey-bottom-right {
+    font-size: 9px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 340px) {
+
+  .journey-container {
+    width: calc(100% - 28px);
+  }
+
+  .journey-heading-left h2 {
+    /* font-size: 37px; */
+   font-size: 25px;
+  }
+
+  .journey-card {
+    width: 210px;
+  }
+
+  .journey-card-inner {
+    min-height: 250px;
+    padding: 16px;
+  }
+
+  .journey-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .journey-section *,
+  .journey-section *::before,
+  .journey-section *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+
+}
+
+
+.manufacturing-animation {
+  width: 220px;
+  min-width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.manufacturing-animation svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .manufacturing-animation {
+    width: 200px;
+    height: 160px;
+    margin: 0 auto;
   }
 }
 
-/* ================================
-   REDUCED MOTION ACCESSIBILITY
-================================ */
+
+
+.journey-animation {
+  width: 100%;
+  max-width: 350px;
+  height: 150px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.journey-animation dotlottie-wc {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .journey-animation {
+    max-width: 280px;
+    height: 240px;
+  }
+}
+
+
+
+
+
+
+/* =========================================
+   PROCESS HEADER - REFINED LAYOUT
+========================================= */
+
+.journey-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px minmax(0, 1fr);
+  align-items: center;
+  gap: 35px;
+  margin-bottom: 55px;
+}
+
+/* LEFT HEADING */
+
+.journey-heading-left {
+  min-width: 0;
+  flex: unset;
+}
+
+.journey-heading-left h2 {
+  font-size: clamp(38px, 4.2vw, 58px);
+  line-height: 1.12;
+  letter-spacing: -2.2px;
+  font-weight: 800;
+  overflow-wrap: normal;
+}
+
+/* CENTER ANIMATION */
+
+.journey-animation {
+  width: 100%;
+  max-width: 220px;
+  height: 175px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.journey-animation dotlottie-wc,
+.journey-animation canvas,
+.journey-animation svg {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* RIGHT DESCRIPTION */
+
+.journey-heading-right {
+  width: 100%;
+  min-width: 0;
+  max-width: 370px;
+  justify-self: end;
+  padding-bottom: 0;
+}
+
+.journey-heading-right > p {
+  font-size: 13px;
+  line-height: 1.85;
+  overflow-wrap: break-word;
+}
+
+
+/* =========================================
+   LAPTOP
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .journey-container {
+    width: calc(100% - 60px);
+  }
+
+  .journey-header {
+    grid-template-columns: minmax(0, 1fr) 180px minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  .journey-heading-left h2 {
+    font-size: clamp(36px, 4.2vw, 48px);
+    letter-spacing: -1.8px;
+  }
+
+  .journey-animation {
+    max-width: 180px;
+    height: 155px;
+  }
+
+  .journey-heading-right {
+    max-width: 320px;
+  }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 768px) {
+
+  .journey-section {
+    padding: 75px 0 65px;
+  }
+
+  .journey-container {
+    width: calc(100% - 44px);
+  }
+
+  .journey-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 38px;
+  }
+
+  .journey-heading-left {
+    width: 100%;
+  }
+
+  .journey-heading-left h2 {
+    font-size: clamp(36px, 6vw, 46px);
+    line-height: 1.12;
+    letter-spacing: -1.8px;
+  }
+
+  .journey-eyebrow {
+    margin-bottom: 16px;
+  }
+
+  .journey-animation {
+    width: 100%;
+    max-width: 230px;
+    height: 170px;
+    margin: 0 auto;
+  }
+
+  .journey-heading-right {
+    width: 100%;
+    max-width: 520px;
+    justify-self: auto;
+  }
+
+  .journey-heading-right > p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .journey-header-note {
+    font-size: 11px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .journey-section {
+    padding: 60px 0 55px;
+  }
+
+  .journey-container {
+    width: calc(100% - 36px);
+  }
+
+  .journey-header {
+    gap: 12px;
+    margin-bottom: 30px;
+  }
+
+  .journey-heading-left h2 {
+    font-size: clamp(32px, 9vw, 39px);
+    line-height: 1.14;
+    letter-spacing: -1.5px;
+  }
+
+  .journey-eyebrow {
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+  }
+
+  .journey-animation {
+    max-width: 190px;
+    height: 145px;
+    margin: 0 auto;
+  }
+
+  .journey-heading-right {
+    max-width: 100%;
+  }
+
+  .journey-heading-right > p {
+    font-size: 12px;
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+
+  .journey-header-note {
+    font-size: 10px;
+    line-height: 1.6;
+  }
+
+  .journey-toolbar {
+    gap: 10px;
+  }
+
+  .journey-counter {
+    gap: 7px;
+  }
+
+  .journey-nav-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .journey-viewport {
+    padding-left: 1px;
+    padding-right: 1px;
+  }
+
+  .journey-bottom {
+    gap: 10px;
+  }
+
+}
+
+
+/* =========================================
+   EXTRA SMALL MOBILE
+========================================= */
+
+@media (max-width: 340px) {
+
+  .journey-container {
+    width: calc(100% - 28px);
+  }
+
+  .journey-heading-left h2 {
+    font-size: 31px;
+    letter-spacing: -1.2px;
+  }
+
+  .journey-animation {
+    max-width: 165px;
+    height: 130px;
+  }
+
+  .journey-counter {
+    gap: 5px;
+  }
+
+  .counter-label {
+    font-size: 8px;
+  }
+
+  .journey-navigation {
+    gap: 5px;
+  }
+
+}
+
+
+/* =========================================
+   PREVENT UNWANTED OVERFLOW
+========================================= */
+
+.journey-section,
+.journey-container,
+.journey-header {
+  box-sizing: border-box;
+}
+
+.journey-section *,
+.journey-section *::before,
+.journey-section *::after {
+  box-sizing: border-box;
+}
+
+.journey-heading-left,
+.journey-heading-right {
+  overflow-wrap: break-word;
+}
+
+.journey-animation {
+  flex-shrink: 0;
+}
 
 @media (prefers-reduced-motion: reduce) {
-  .process-card,
-  .card-icon,
-  .card-number,
-  .card-glow,
-  .card-bottom-accent {
+  .journey-animation {
     transition: none;
   }
 }

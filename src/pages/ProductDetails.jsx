@@ -4,6 +4,7 @@ import productData from "../data/productData";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import WhatsApp from "../components/WhatsApp";
+import { Link } from "react-router-dom";
 
 function ProductDetails() {
   const industries = [
@@ -107,17 +108,21 @@ function ProductDetails() {
                 </ul>
               </div>
 
-              <a
+              {/* <a
                 className="pd-quote-btn"
                 href="https://wa.me/916381506536"
                 target="_blank"
                 rel="noopener noreferrer"
-              >
-                <span>Get Quote</span>
+              > */}
+                <Link to="/get-quote" className="pd-quote-btn">
+                      <span>Get Quote</span>
                 <span className="pd-quote-arrow" aria-hidden="true">
                   ↗
                 </span>
-              </a>
+
+                </Link>
+                
+              {/* </a> */}
             </aside>
           </div>
         </div>

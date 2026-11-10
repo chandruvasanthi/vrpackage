@@ -1,77 +1,153 @@
-import { useState } from "react";
-import "./WhyChooseUs.css";
+import './Process.css'
+import processData from '../data/processData'
+import { motion, useMotionValue, useAnimationFrame } from 'framer-motion'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
-function WhyChooseUs() {
-  const [weight, setWeight] = useState(1);
-  const [paperPrice, setPaperPrice] = useState(40);
-  const [conversion, setConversion] = useState(8);
-  const [overhead, setOverhead] = useState(2);
-  const [profit, setProfit] = useState(20);
+function Process() {
+  const firstSetRef = useRef(null)
+  const isDragging = useRef(false)
+  const isHovered = useRef(false)
 
-  const paperCost = weight * paperPrice;
-  const totalCost = paperCost + conversion + overhead;
-  const profitAmount = totalCost * (profit / 100);
-  const sellingPrice = totalCost + profitAmount;
+  const [setWidth, setSetWidth] = useState(0)
+  const x = useMotionValue(0)
+
+  // Measure the width of one complete set of process cards.
+  const measureTrack = useCallback(() => {
+    if (firstSetRef.current) {
+      setSetWidth(firstSetRef.current.getBoundingClientRect().width)
+    }
+  }, [])
+
+  useEffect(() => {
+    measureTrack()
+
+    window.addEventListener('resize', measureTrack)
+
+    let resizeObserver
+
+    if (typeof ResizeObserver !== 'undefined' && firstSetRef.current) {
+      resizeObserver = new ResizeObserver(measureTrack)
+      resizeObserver.observe(firstSetRef.current)
+    }
+
+    return () => {
+      window.removeEventListener('resize', measureTrack)
+      resizeObserver?.disconnect()
+    }
+  }, [measureTrack])
+
+  // Smooth automatic scrolling; pause on hover and while dragging.
+  useAnimationFrame((_, delta) => {
+    if (!setWidth || isHovered.current || isDragging.current) {
+      return
+    }
+
+    const speed = 32 // Pixels per second; lower = slower.
+
+    let nextX = x.get() - (speed * delta) / 1000
+
+    // Loop seamlessly across the duplicated card sets.
+    if (nextX <= -setWidth) {
+      nextX += setWidth
+    }
+
+    x.set(nextX)
+  })
+
+  const handleDragStart = () => {
+    isDragging.current = true
+  }
+
+  const handleDragEnd = () => {
+    isDragging.current = false
+
+    if (!setWidth) return
+
+    // Keep the track position within the repeating loop.
+    let currentX = x.get()
+
+    while (currentX <= -setWidth) {
+      currentX += setWidth
+    }
+
+    while (currentX > 0) {
+      currentX -= setWidth
+    }
+
+    x.set(currentX)
+  }
+
+  const renderCards = (isDuplicate = false) =>
+    processData.map((item) => (
+      <div
+        className="process-card"
+        key={`${isDuplicate ? 'duplicate-' : ''}${item.id}`}
+      >
+        <div className="card-number">
+          {String(item.id).padStart(2, '0')}
+        </div>
+
+        <div className="card-top-line">
+          <span className="card-step">STEP</span>
+          <span className="card-line"></span>
+        </div>
+
+        <div className="card-icon">{item.icon}</div>
+
+        <h3>{item.title}</h3>
+        <p>{item.description}</p>
+
+        <div className="card-glow"></div>
+        <div className="card-bottom-accent"></div>
+      </div>
+    ))
 
   return (
-    <div className="box-calculator">
-      <h2>Corrugated Box Price Calculator</h2>
-
-      <div className="calculator-inputs">
-        <label>Box Weight (KG)</label>
-        <input
-          type="number"
-          min="0"
-          step="0.001"
-          value={weight}
-          onChange={(e) => setWeight(Number(e.target.value))}
-        />
-
-        <label>Kraft Paper Price (₹ / KG)</label>
-        <input
-          type="number"
-          min="0"
-          value={paperPrice}
-          onChange={(e) => setPaperPrice(Number(e.target.value))}
-        />
-
-        <label>Conversion Cost (₹ / Box)</label>
-        <input
-          type="number"
-          min="0"
-          value={conversion}
-          onChange={(e) => setConversion(Number(e.target.value))}
-        />
-
-        <label>Other Expenses (₹ / Box)</label>
-        <input
-          type="number"
-          min="0"
-          value={overhead}
-          onChange={(e) => setOverhead(Number(e.target.value))}
-        />
-
-        <label>Profit Percentage (%)</label>
-        <input
-          type="number"
-          min="0"
-          value={profit}
-          onChange={(e) => setProfit(Number(e.target.value))}
-        />
+    <section className="process-section" id="process">
+      <div className="process-heading">
+        <h2>Our Process</h2>
       </div>
 
-      <div className="calculator-results">
-        <p>Paper Cost: ₹{paperCost.toFixed(2)}</p>
-        <p>Total Production Cost: ₹{totalCost.toFixed(2)}</p>
-        <p>Profit: ₹{profitAmount.toFixed(2)}</p>
+      <div
+        className="horizontal-scroll"
+        onMouseEnter={() => {
+          isHovered.current = true
+        }}
+        onMouseLeave={() => {
+          isHovered.current = false
+        }}
+      >
+        <motion.div
+          className="process-track"
+          style={{ x }}
+          drag="x"
+          dragConstraints={{
+            left: setWidth ? -setWidth * 2 : -1000,
+            right: setWidth ? 0 : 1000,
+          }}
+          dragElastic={0.03}
+          dragMomentum={false}
+          onDragStart={handleDragStart}
+          onDragEnd={handleDragEnd}
+        >
+          {/* ORIGINAL PROCESS CARDS */}
+          <div className="process-card-set" ref={firstSetRef}>
+            {renderCards()}
+          </div>
 
-        <div className="selling-price">
-          <span>Selling Price / Box</span>
-          <h2>₹{sellingPrice.toFixed(2)}</h2>
-        </div>
+          {/* DUPLICATE SET FOR CONTINUOUS LOOPING */}
+          <div className="process-card-set" aria-hidden="true">
+            {renderCards(true)}
+          </div>
+        </motion.div>
       </div>
-    </div>
-  );
+
+      <p className="process-hint">
+        Hover to pause · Drag or swipe to explore
+      </p>
+    </section>
+  )
 }
 
-export default WhyChooseUs;
+export default Process
+

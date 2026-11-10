@@ -141,18 +141,21 @@ function AllProducts() {
               your exact business requirements.
             </p>
 
-            <a
+            {/* <a
               className="cta-btn"
               href="https://wa.me/916381506536"
               target="_blank"
               rel="noopener noreferrer"
-            >
-              <span>Request a Quote</span>
+            > */}
+              <Link  to="/get-quote"  className="cta-btn">
+                     <span>Request a Quote</span>
 
               <span className="cta-btn-arrow" aria-hidden="true">
                 ↗
               </span>
-            </a>
+              </Link>
+              
+            {/* </a> */}
 
           </div>
         </section>
