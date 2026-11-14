@@ -109,7 +109,7 @@ function Navbar() {
   </ul>
 </li> */}
 
-        <li>
+        {/* <li>
           <HashLink smooth to="/#process" onClick={closeMenu}>
             Process
           </HashLink>
@@ -118,18 +118,24 @@ function Navbar() {
           <HashLink smooth to="/#CorrugatedBox3D" onClick={closeMenu}>
             Why we
           </HashLink>
+        </li> */}
+
+         <li>
+          <HashLink smooth to="/blog" onClick={closeMenu}>
+            Blog
+          </HashLink>
         </li>
         <li>
           <HashLink smooth to="/#contact" onClick={closeMenu}>
             Contact
           </HashLink>
         </li>
-
-        <li>
+       
+        {/* <li>
           <HashLink smooth to="/#faq" onClick={closeMenu}>
             FAQ's
           </HashLink>
-        </li>
+        </li> */}
 
         <li className="mobile-quote-item">
           <HashLink
