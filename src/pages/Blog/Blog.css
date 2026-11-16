@@ -1279,6 +1279,7 @@
   .journal-story-count {
     gap: 5px;
     padding-top: 10px;
+    /* padding-right: 20px; */
   }
 
   .journal-story-count strong {
@@ -1287,6 +1288,7 @@
 
   .journal-story-count span {
     font-size: 7px;
+    display: none;
   }
 
   .journal-filter-area {

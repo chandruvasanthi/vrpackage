@@ -136,7 +136,12 @@ const BlogPost = () => {
               <span className="magazine-overline">NEED PACKAGING?</span>
               <h3>The right box makes a difference.</h3>
               <p>Discuss custom corrugated packaging for your product, dimensions and delivery requirements.</p>
-              <Link to="/get-quote">Get a quote <FiArrowUpRight /></Link>
+              <Link  to="/get-quote" id="psgaqbtn">
+              <button    className="post-sidebar-card-link">
+                      Get a quote <FiArrowUpRight />
+              </button>
+             </Link>
+             
             </div>
             <div className="post-sidebar-info">
               <span>ABOUT VR PACKAGE</span>

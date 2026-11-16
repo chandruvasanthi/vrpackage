@@ -149,6 +149,7 @@ import './Hero.css'
 import Heroimg1 from '../assets/Heroimg1.webp'
 import Heroimg2 from '../assets/Heroimg2.webp'
 import Heroimg3 from '../assets/Heroimg3.webp'
+import { image } from 'framer-motion/client'
 
 // ========================================
 // HERO SLIDES
@@ -156,7 +157,9 @@ import Heroimg3 from '../assets/Heroimg3.webp'
 
 const slides = [
   {
-    image: Heroimg1,
+     image: Heroimg1,
+   // image:"https://i.ibb.co/tT4NDHL1/Corrugated-Cardboard-Factory-Floor.png",
+     mobileImage: "https://i.ibb.co/FbsVrd9C/hero-mobile-1-1.webp",
     eyebrow: 'VR PACKAGE  •  SALEM',
     title: 'Premium Corrugated',
     highlight: 'Box Manufacturing',
@@ -168,6 +171,8 @@ const slides = [
   },
   {
     image: Heroimg2,
+    //image:"https://i.ibb.co/XkbJrJLs/Modern-Cardboard-Box-Packaging-Display.png",
+     mobileImage: "https://i.ibb.co/YB578jKx/Kraft-Cardboard-Boxes-in-Studio1.png",
     eyebrow: 'STRENGTH YOU CAN TRUST',
     title: 'Strong & Secure',
     highlight: 'Industrial',
@@ -179,6 +184,8 @@ const slides = [
   },
   {
     image: Heroimg3,
+    //image:"https://i.ibb.co/Cpk46gph/6d953a36-74af-4a0f-a890-e2e21556b71e.png",
+     mobileImage: "https://i.ibb.co/Nnm1TLRt/hero-mobile-3-1.webp",
     eyebrow: 'PACKAGING MADE FOR YOUR BRAND',
     title: 'Custom Printed',
     highlight: 'Corrugated Boxes',
@@ -219,6 +226,21 @@ const Hero = () => {
           backgroundImage: `url(${currentSlide.image})`,
         }}
       />
+
+      {/* Desktop background */}
+{/* <div
+  className="vr-hero-background vr-hero-desktop"
+  style={{
+    backgroundImage: `url(${currentSlide.image})`,
+  }}
+/>
+
+<div
+  className="vr-hero-background vr-hero-mobile"
+  style={{
+    backgroundImage: `url(${currentSlide.mobileImage})`,
+  }}
+/> */}
 
       {/* Background overlays */}
       <div className="vr-hero-overlay" />

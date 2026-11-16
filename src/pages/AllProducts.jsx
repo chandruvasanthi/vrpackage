@@ -37,7 +37,7 @@ function AllProducts() {
         <section className="all-products-main">
           <div className="all-products-container">
 
-            <div className="all-products-header">
+            {/* <div className="all-products-header">
               <span className="all-products-eyebrow">
                 <span className="all-products-eyebrow-line" />
                 VR PACKAGE
@@ -48,7 +48,40 @@ function AllProducts() {
                 Exclusive Products{" "}
                 <span>Collection</span>
               </h1>
-            </div>
+            </div> */}
+
+                  
+<div className="products-hero">
+  <div className="products-hero-background">
+    <div className="products-hero-rings" />
+    <div className="products-hero-shape" />
+    <div className="products-hero-glow" />
+  </div>
+
+  <div className="products-hero-content">
+    <div className="products-hero-eyebrow">
+      {/* <span /> */}
+      <span>VR PACKAGE</span> — PRODUCTS COLLECTION
+    </div>
+
+    <h1 className="products-hero-title">
+      The Right Box.
+      <span> The Right Protection.</span>
+    </h1>
+
+    <p className="products-hero-description">
+      Explore reliable corrugated packaging solutions designed
+      to protect, perform and deliver.
+    </p>
+
+    <div className="products-hero-bottom">
+      <span>ENGINEERED FOR STRENGTH</span>
+      <span className="products-hero-bottom-line" />
+      <span>MADE FOR YOUR BUSINESS</span>
+    </div>
+  </div>
+</div>
+
 
             <div className="all-products-grid">
               {productData.map((item, index) => (

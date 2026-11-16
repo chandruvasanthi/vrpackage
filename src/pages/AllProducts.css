@@ -804,3 +804,329 @@
     font-size: 11px;
   }
 }
+
+
+
+
+/* =====================================
+   PRODUCTS HERO — RIGHT CIRCULAR DESIGN
+===================================== */
+
+.products-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at 88% 0%,
+      rgba(242, 93, 41, 0.09),
+      transparent 45%
+    ),
+    linear-gradient(
+      110deg,
+      #11151b 0%,
+      #0b0d12 60%,
+      #101116 100%
+    );
+   
+}
+
+/* Large half-circle with concentric rings */
+
+.products-hero-bg::before {
+  content: "";
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  top: -535px;
+  right: -2%;
+  border: 1px solid rgba(242, 93, 41, 0.18);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 45px rgba(242, 93, 41, 0.025),
+    0 0 0 95px rgba(242, 93, 41, 0.035),
+    0 0 0 150px rgba(242, 93, 41, 0.025);
+}
+
+/* Soft orange light behind the circle */
+
+.products-hero-bg::after {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 300px;
+  top: -190px;
+  right: -30px;
+  background: rgba(242, 93, 41, 0.13);
+  filter: blur(100px);
+  border-radius: 50%;
+}
+
+/* Remove previous separate accent elements */
+
+.products-hero-light,
+.products-hero-accent {
+  display: none;
+}
+
+/* Keep text above background */
+
+.products-hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+
+/* =====================================
+   PRODUCTS COMPACT HERO
+===================================== */
+
+.products-hero {
+  --products-orange: #f25d29;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 265px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 38px 30px;
+  margin-bottom: 55px;
+  background: #0d1117;
+  border: 1px solid rgba(242, 93, 41, 0.2);
+   border-radius: 8px;
+}
+
+/* =====================================
+   BACKGROUND DESIGN
+===================================== */
+
+.products-hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      110deg,
+      #10151b 0%,
+      #0b0e13 55%,
+      #141116 100%
+    );
+}
+
+/* Large half-circle on the right */
+
+.products-hero-background::before {
+  content: "";
+  position: absolute;
+
+  width: 650px;
+  height: 650px;
+
+  top: -535px;
+  right: -2%;
+
+  border: 1px solid rgba(242, 93, 41, 0.18);
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 45px rgba(242, 93, 41, 0.025),
+    0 0 0 95px rgba(242, 93, 41, 0.035),
+    0 0 0 150px rgba(242, 93, 41, 0.025);
+}
+
+/* Soft orange lighting */
+
+.products-hero-background::after {
+  content: "";
+  position: absolute;
+
+  width: 520px;
+  height: 300px;
+
+  top: -190px;
+  right: -30px;
+
+  background: rgba(242, 93, 41, 0.13);
+  filter: blur(100px);
+  border-radius: 50%;
+}
+
+/* Remove previous background decorations */
+
+.products-hero-glow,
+.products-hero-rings,
+.products-hero-shape {
+  display: none;
+}
+
+/* =====================================
+   CONTENT
+===================================== */
+
+.products-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+}
+
+/* Eyebrow */
+
+.products-hero-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 17px;
+
+  /* color: #ff8755; */
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.products-hero-eyebrow span {
+  color: #f25d29;
+}
+
+/* Heading */
+
+.products-hero-title {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(32px, 4vw, 49px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1.7px;
+}
+
+.products-hero-title span {
+  color: #f25d29;
+}
+
+/* Description */
+
+.products-hero-description {
+  max-width: 570px;
+  margin: 13px auto 19px;
+
+  color: #a7adb6;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* Bottom details */
+
+.products-hero-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+
+  color: #858d97;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.products-hero-bottom-line {
+  width: 25px;
+  height: 1px;
+  background: #f25d29;
+}
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 768px) {
+  .products-hero {
+    min-height: 250px;
+    padding: 35px 22px;
+    margin-bottom: 45px;
+  }
+
+  .products-hero-background::before {
+    width: 550px;
+    height: 550px;
+    top: -460px;
+    right: -15%;
+    box-shadow:
+      0 0 0 40px rgba(242, 93, 41, 0.025),
+      0 0 0 80px rgba(242, 93, 41, 0.035),
+      0 0 0 125px rgba(242, 93, 41, 0.025);
+  }
+
+  .products-hero-background::after {
+    width: 400px;
+    height: 240px;
+    right: -80px;
+  }
+
+  .products-hero-title {
+    font-size: 38px;
+  }
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 480px) {
+  .products-hero {
+    min-height: 245px;
+    padding: 32px 17px;
+  }
+
+  .products-hero-background::before {
+    width: 480px;
+    height: 480px;
+    top: -390px;
+    right: -210px;
+    box-shadow:
+      0 0 0 35px rgba(242, 93, 41, 0.025),
+      0 0 0 75px rgba(242, 93, 41, 0.035),
+      0 0 0 115px rgba(242, 93, 41, 0.025);
+  }
+
+  .products-hero-background::after {
+    width: 300px;
+    height: 200px;
+    top: -120px;
+    right: -100px;
+  }
+
+  .products-hero-eyebrow {
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+
+  .products-hero-title {
+    font-size: 32px;
+    letter-spacing: -1px;
+  }
+
+  .products-hero-description {
+    font-size: 12px;
+  }
+
+  .products-hero-bottom {
+    gap: 8px;
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
+  .products-hero-bottom-line {
+    width: 15px;
+  }
+}
