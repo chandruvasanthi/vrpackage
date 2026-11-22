@@ -42,7 +42,7 @@ function Navbar() {
         </li>
 
         <li>
-          <HashLink smooth to="/#products" onClick={closeMenu}>
+          <HashLink smooth to="/products" onClick={closeMenu}>
             Products
           </HashLink>
         </li>

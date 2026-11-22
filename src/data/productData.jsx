@@ -7,7 +7,8 @@ const productData = [
   id: 1,
   slug: "corrugated-boxes",
   title: "Corrugated Boxes",
-  image: "https://i.ibb.co/ds5vnrjr/premium-photo-1765592886838-40e716f69502.avif",
+  //image: "https://i.ibb.co/ds5vnrjr/premium-photo-1765592886838-40e716f69502.avif",
+  image:"https://i.ibb.co/wZgfKy55/Corrugated-Cardboard-Boxes-Arrangement.png",
   description: "High-quality corrugated boxes for safe packaging and transportation.",
   fullDescription:
     "Our Corrugated Boxes are manufactured using premium-quality kraft paper and advanced corrugation technology. These boxes provide excellent strength, durability, and protection during transportation and storage. Suitable for e-commerce, retail, logistics, food packaging, and industrial applications.",
@@ -31,7 +32,8 @@ const productData = [
     id: 2,
     slug: "Printed Packaging Boxes",
     title: 'Printed Packaging Boxes',
-    image:'https://i.ibb.co/d4hNQv5n/photo-1612188852636-8f59921b41a6.avif',
+    //image:'https://i.ibb.co/d4hNQv5n/photo-1612188852636-8f59921b41a6.avif',
+    image:"https://i.ibb.co/SL14R9d/Eco-Friendly-Green-Branded-Box-Collection.png",
     description:'Custom printed boxes with premium finishing and branding.',
     fullDescription: "Printed Packaging Boxes are designed to enhance brand visibility while providing secure product protection. These boxes can be customized with company logos, product information, and attractive graphics, making them ideal for retail and promotional packaging.",
     features: [
@@ -53,7 +55,8 @@ const productData = [
     id: 3,
     slug: "Retail Packaging Boxes",
     title: 'Retail Packaging Boxes',
-    image:'https://i.ibb.co/pjPDdjmc/corrugated-boxes.jpg',
+    //image:'https://i.ibb.co/pjPDdjmc/corrugated-boxes.jpg',
+    image:"https://i.ibb.co/N6mz6FVX/Blank-Kraft-Cardboard-Boxes-on-White-Background.png",
     description:'Premium retail packaging solutions for modern businesses.',
     fullDescription:
      "Our Retail Packaging Boxes are crafted to create a premium unboxing experience while ensuring product safety. These boxes combine visual appeal with structural integrity, making them ideal for retail displays and customer deliveries.",
@@ -83,7 +86,7 @@ const productData = [
 
 features: [
 "Custom Shapes",
-"Multicolor Printing",
+"Multicolor Printing",  
 "Premium Finishing",
 "Strong Structure",
 "Brand Enhancement"
@@ -100,7 +103,8 @@ applications: [
     id: 5,
     slug:'Custom Carton Boxes',
     title: 'Custom Carton Boxes',
-    image: 'https://i.ibb.co/V0n6zsVd/premium-photo-1765816720952-d558d7dcb18b.avif',
+    // image: 'https://i.ibb.co/V0n6zsVd/premium-photo-1765816720952-d558d7dcb18b.avif',
+    image:"https://i.ibb.co/3yPBY1t6/Kraft-Cardboard-Packaging-Collection.png",
     description:'Customized carton packaging solutions for all industries.',
     fullDescription:
 "Our Custom Carton Boxes are tailored according to specific product dimensions and packaging requirements. They provide excellent protection and branding opportunities for businesses across multiple industries.",
@@ -124,7 +128,8 @@ applications: [
   id: 6,
   slug:'Oil Boxes',
   title: 'Oil Boxes',
-  image:'https://i.ibb.co/xS6cXsDC/Chat-GPT-Image-May-29-2026-06-39-21-PM.png',
+  //image:'https://i.ibb.co/xS6cXsDC/Chat-GPT-Image-May-29-2026-06-39-21-PM.png',
+  image:"https://i.ibb.co/99R3CTQj/Pure-Oil-Edible-Oil-Packaging-Display.png",
   description:'Heavy-duty oil box designed to prevent leakage and ensure safe delivery.',
   fullDescription:
 "Oil Boxes are specially designed to safely store and transport edible oils, lubricants, and liquid products. Their durable construction helps prevent leakage and ensures safe handling during transportation.",
@@ -148,12 +153,13 @@ applications: [
   id: 7,
   slug:'Food Product Export Box',
   title: "Food Product Export Box",
-  image: "https://i.ibb.co/DP46NSnt/printed-interlock-corrugated-carton-322.jpg",
+ // image: "https://i.ibb.co/DP46NSnt/printed-interlock-corrugated-carton-322.jpg",
+ image:"https://i.ibb.co/8L9smhg8/Open-Cardboard-Produce-Box-with-Fresh-Harvest.png",
   description: "Export-grade packaging box for safe international shipping of food products.",
  fullDescription:
 "Our Food Product Export Boxes are manufactured to meet international shipping standards. These boxes provide superior protection against moisture, impact, and handling damage during long-distance transportation.",
 
-features: [
+features: [ 
 "Export Grade Quality",
 "Moisture Resistant",
 "Strong Construction",
@@ -172,7 +178,8 @@ applications: [
     id: 8,
     slug:'Heavy Duty Boxes',
     title: 'Heavy Duty Boxes',
-    image: 'https://i.ibb.co/mVJWh2P0/ou-Ki-Nn-P4-Xs-Erkt1-Vx-FAu-Od-Gf-MRrj-QMItp-NUPxpano-Ip-Lk-PHt05qb42-Fv3-Ar-XMkf-R-c-S58u-EGz-Wn-Pf-St.jpg',
+   // image: 'https://i.ibb.co/mVJWh2P0/ou-Ki-Nn-P4-Xs-Erkt1-Vx-FAu-Od-Gf-MRrj-QMItp-NUPxpano-Ip-Lk-PHt05qb42-Fv3-Ar-XMkf-R-c-S58u-EGz-Wn-Pf-St.jpg',
+   image:"https://i.ibb.co/LdWXrJFX/Heavy-Duty-Boxes-Product-Display.png",
     description:'Strong heavy-duty corrugated boxes for industrial packaging.',
     fullDescription:
 "Heavy Duty Boxes are engineered for transporting large and heavy products safely. These boxes feature reinforced corrugated layers that provide exceptional strength and durability.",
@@ -198,7 +205,8 @@ applications: [
     slug:'Export Packaging',
     title: 'Export Packaging',
     // image:'https://i.ibb.co/kpJh079/0f-R3-ENti0-NYBe-Oyx-UPYV2uuv-Akmz-STu-X1tjtsx-6-ENd-MXYi9we-f-RJpv-Co-As-LS5-C8-PUOk-Dh-Mz-O155b-QUq-Ro.jpg',
-    image:'https://i.ibb.co/Tx90q9PZ/box1.webp',
+   // image:'https://i.ibb.co/Tx90q9PZ/box1.webp',
+   image:"https://i.ibb.co/WW6HnH6m/Export-Packaging-Boxes-on-Pallet-1.png",
     description:'Secure export packaging boxes for logistics and shipping.',
    fullDescription:
 "Our Export Packaging solutions ensure that products reach international destinations safely. Manufactured with premium-grade materials, these boxes are designed to withstand harsh shipping environments.",
@@ -223,7 +231,8 @@ applications: [
   id: 10,
   slug:'Corrugated Rolls',
   title: 'Corrugated Rolls',
-  image:'https://i.ibb.co/fzZ7sJvh/FNpjt-LAmyx-Z6wn-Ujt-A5-L2v-ZPw-CKb8a17-P6fxlni6al54q6x-Oq-Hy-J5l-Baf-Dk-YFu-DG48rugc-Kv8-E-NZg-X3vzhbg.jpg',
+//  image:'https://i.ibb.co/fzZ7sJvh/FNpjt-LAmyx-Z6wn-Ujt-A5-L2v-ZPw-CKb8a17-P6fxlni6al54q6x-Oq-Hy-J5l-Baf-Dk-YFu-DG48rugc-Kv8-E-NZg-X3vzhbg.jpg',
+image:"https://i.ibb.co/KcYYtbYZ/Corrugated-Cardboard-Rolls-Trio.png",
   description:'Premium quality corrugated rolls used for protective packaging and wrapping.',
  fullDescription:
 "Corrugated Rolls provide flexible cushioning and protective wrapping for delicate products during storage and transportation. They are lightweight, economical, and environmentally friendly.",
@@ -248,8 +257,9 @@ applications: [
   id: 11,
   slug:'Corrugated Sheets',
   title: 'Corrugated Sheets',
-  image:'https://i.ibb.co/xtjyBkXB/POMswy-F7yi-Ewe-Ggx4-IR3-NXQXz-Xpq90-z-E1-Fm-1w-OJHNm-RKsca-M2-ZH0-GHi-Nf-LM92-V7-MG-Ca-JHEj1u-EECDK-XE5f3.jpg',
-  description:'Durable corrugated sheets suitable for industrial packaging.',
+ // image:'https://i.ibb.co/xtjyBkXB/POMswy-F7yi-Ewe-Ggx4-IR3-NXQXz-Xpq90-z-E1-Fm-1w-OJHNm-RKsca-M2-ZH0-GHi-Nf-LM92-V7-MG-Ca-JHEj1u-EECDK-XE5f3.jpg',
+ image:"https://i.ibb.co/PvWkhwDj/Corrugated-Cardboard-Sheet-Stack.png",
+ description:'Durable corrugated sheets suitable for industrial packaging.',
  fullDescription:
 "Corrugated Sheets are versatile packaging materials used for cushioning, partitions, and custom packaging solutions. They offer excellent durability and protection for a wide range of products.",
 
@@ -297,7 +307,8 @@ applications: [
   id: 13,
   slug: "3-ply-corrugated-boxes",
   title: "3-Ply Corrugated Boxes",
-  image: "https://i.ibb.co/YFrHvHkH/Packing-Boxes-3-Ply-16x16x16-Carton-Box-Packaging-Boxes.jpg",
+  //image: "https://i.ibb.co/YFrHvHkH/Packing-Boxes-3-Ply-16x16x16-Carton-Box-Packaging-Boxes.jpg",
+  image:"https://i.ibb.co/B5wd4Yq1/Open-Box-with-3-Ply-Corrugated-Detail.png",
   description:
     "Lightweight and durable 3-ply corrugated boxes designed for reliable packaging, storage, and transportation.",
 
@@ -326,7 +337,8 @@ applications: [
   id: 14,
   slug: "5-ply-corrugated-boxes",
   title: "5-Ply Corrugated Boxes",
-  image: "https://i.ibb.co/XZ5RZnsg/5-7-Ply-Heavy-Duty-Corrugated-Box-Manufacturer-Supplier-in-Ahmedabad-and-Gandhinagar.jpg",
+  //image: "https://i.ibb.co/XZ5RZnsg/5-7-Ply-Heavy-Duty-Corrugated-Box-Manufacturer-Supplier-in-Ahmedabad-and-Gandhinagar.jpg",
+  image:"https://i.ibb.co/8nhJgbm9/Open-Corrugated-Box-with-5-Ply-Detail.png",
   description:
     "Strong and durable 5-ply corrugated boxes designed for enhanced product protection during storage and transportation.",
 

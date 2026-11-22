@@ -38,7 +38,7 @@ function Location() {
 
         <div className="location-details">
           <FaMapMarkerAlt className="location-icon" />
-
+          <p><b>OUR FACTORY</b></p>
           <h2>VR Package</h2>
 
           <p>
