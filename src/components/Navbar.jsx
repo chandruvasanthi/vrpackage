@@ -15,10 +15,11 @@ function Navbar() {
       <a href="/#home" className="logo" onClick={closeMenu}>
         <div className="logo-icon">
           <img
-            src="https://i.ibb.co/5xYQJVFL/16ec22a5-bc2c-4640-9249-35f514835786.png"
-            
+            src="/images/logo/your-logo.png"
             alt="VR Logo"
             className="logo-image"
+            loading="eager"
+            decoding="async"
           />
         </div>
 

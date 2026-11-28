@@ -1,5 +1,3 @@
-import { image } from "framer-motion/client";
-
 export const blogCategories = [
   "All",
   "Packaging Knowledge",
@@ -23,9 +21,7 @@ export const blogArticles = [
     author: "VR Package Team",
     featured: true,
     
-  // image: "https://nohxgcsjtmxujjaxjzsn.supabase.co/storage/v1/object/public/part-images/blog-covers/how-to-start-a-corrugated-box-manufacturing-business-in-india.png?v=1777552167275&utm_source=chatgpt.com",
-    // image:"https://i.ibb.co/XxVpQPCG/Gemini-Generated-Image-6tp74n6tp74n6tp7.png",
-     image:"https://i.ibb.co/C3cY9V5F/Corrugated-Box-Layers-in-a-Warehouse.png",
+     image:"/images/blog/blogimg1.webp",
     content: [
       {
         heading: "Why does the number of plies matter?",
@@ -67,10 +63,7 @@ export const blogArticles = [
     readTime: "7 min read",
     author: "VR Package Team",
     featured: false,
-   // image: "https://nohxgcsjtmxujjaxjzsn.supabase.co/storage/v1/object/public/part-images/blog-covers/how-to-start-a-corrugated-box-manufacturing-business-in-india.png?v=1777552167275&utm_source=chatgpt.com",
-
-  //  image:"https://i.ibb.co/YFbrM5pV/02-corrugated-manufacturing.png",  
-   image:"https://i.ibb.co/DfbSFQm6/Modern-Kraft-Paper-Production-Line.png",
+    image:"/images/blog/blogimg2.webp",
     content: [
 
       {
@@ -113,9 +106,7 @@ export const blogArticles = [
     readTime: "6 min read",
     author: "VR Package Team",
     featured: false,
-    //image: "https://images.yybcdn.com/sites/100000/100016/1779249661915573200787959808.webp?utm_source=chatgpt.com",
-   // image:"https://i.ibb.co/fhfSRby/Gemini-Generated-Image-st7hmkst7hmkst7h.png",
-   image:"https://i.ibb.co/8D4m9FM1/Corrugated-Cardboard-Quality-Testing-Lab.png",
+    image:"/images/blog/blogimg3.webp",
     content: [
       {
         heading: "What GSM tells you",
@@ -157,9 +148,7 @@ export const blogArticles = [
     readTime: "5 min read",
     author: "VR Package Team",
     featured: false,
-    //image: "https://thepulpandpapertimes.com/Uploads/News/Main/2026/4/13/paperimagenew.jpg?utm_source=chatgpt.com",
-   // image:"https://i.ibb.co/whxTnyJm/04-custom-printed-boxesse.png",
-      image:"https://i.ibb.co/S48dtDSX/Vibrant-Printed-Boxes-in-Warehouse-Setting.png",
+    image:"/images/blog/blogimg4.webp",
     content: [
       {
         heading: "A box can do more than contain a product",
@@ -201,10 +190,7 @@ export const blogArticles = [
     readTime: "5 min read",
     author: "VR Package Team",
     featured: false,
-    // image: "https://www.krnambalaj.com.tr/contents/img/krn/uretim-1.jpg?utm_source=chatgpt.com",
-    //image:"https://i.ibb.co/svNQmVTs/watermarked-img-13831481360649315722.webp",
-    //image:"https://thepulpandpapertimes.com/Uploads/News/Main/2026/4/13/paperimagenew.jpg?utm_source=chatgpt.com",
-    image:"https://i.ibb.co/FkRfbjjG/Warehouse-Packing-Station-with-Boxes-and-Tools.png",
+    image:"/images/blog/blogimg5.webp",
     content: [
       {
         heading: "Measure the product first",
@@ -246,9 +232,7 @@ export const blogArticles = [
     readTime: "4 min read",
     author: "VR Package Team",
     featured: false,
-    // image: "https://www.abcmarket24.pl/userdata/public/news/images/11.jpg?utm_source=chatgpt.com",
-    //image:"https://i.ibb.co/xqQHYfYj/watermarked-img-15293195646986392459.webp",
-    image:"https://i.ibb.co/tMvWFKhY/Eco-Friendly-Packaging-in-Nature.png",
+    image:"/images/blog/blogimg6.webp",
     content: [
       {
         heading: "Look at the full packaging requirement",
@@ -283,10 +267,7 @@ export const blogArticles = [
     readTime: "5 min read",
     author: "VR Package Team",
     featured: false,
-    image:"https://i.ibb.co/6Js3VvW0/Modern-E-Commerce-Packing-Station.png",
-   //  image: "https://kraftav.com/assets/images/card-industrial.jpg",
-    // image:"https://i.ibb.co/nhPJrh4/8c8433a7-2f36-45df-9f3e-a1072581e3dd.webp",
-    //image:"https://i.ibb.co/xtyrcjPD/07-ecommerce-shipping.png",
+    image:"/images/blog/blogimg7.webp",
     content: [
       {
         heading: "Packaging has to work across many handling stages",
@@ -328,9 +309,7 @@ export const blogArticles = [
     readTime: "4 min read",
     author: "VR Package Team",
     featured: false,
-    // image: "https://media.internazionale.it/images/2023/03/23/180285-sd.jpg?utm_source=chatgpt.com",
-    //image:"https://i.ibb.co/Mxn9Fxx6/08-partitions-and-fitments-2.png",
-    image:"https://i.ibb.co/2020bZpQ/Organized-Bottle-Shipping-Box.png",
+    image:"/images/blog/blogimg8.webp",
     content: [
       {
         heading: "Why use internal partitions?",

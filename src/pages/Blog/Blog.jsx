@@ -1,17 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import {
-  FiArrowUpRight,
-  FiSearch,
-  FiClock,
-  FiCalendar,
-  FiBookOpen,
-  FiArrowRight,
-} from "react-icons/fi";
-
+import { FiArrowUpRight, FiSearch, FiClock, FiCalendar, FiBookOpen, FiArrowRight,} from "react-icons/fi";
 import { FiArrowDownRight } from "react-icons/fi";
-
 import { blogArticles, blogCategories } from "../../data/BlogData";
 import "./Blog.css";
 import Footer from "../../components/Footer";

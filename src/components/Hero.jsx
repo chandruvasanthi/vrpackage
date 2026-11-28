@@ -1,17 +1,11 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-
-import {
-  FaArrowRight,
-  FaArrowDown,
-} from 'react-icons/fa6'
-
+import { FaArrowRight} from 'react-icons/fa6'
 import './Hero.css'
 
-import Heroimg1 from '../assets/Heroimg1.webp'
-import Heroimg2 from '../assets/Heroimg2.webp'
-import Heroimg3 from '../assets/Heroimg3.webp'
-import { image } from 'framer-motion/client'
+const Heroimg1 = "/images/hero/Heroimg1.webp";
+const Heroimg2 = "/images/hero/Heroimg2.webp";
+const Heroimg3 = "/images/hero/Heroimg3.webp";
 
 // ========================================
 // HERO SLIDES
@@ -19,9 +13,7 @@ import { image } from 'framer-motion/client'
 
 const slides = [
   {
-     image: Heroimg1,
-   // image:"https://i.ibb.co/tT4NDHL1/Corrugated-Cardboard-Factory-Floor.png",
-     mobileImage: "https://i.ibb.co/FbsVrd9C/hero-mobile-1-1.webp",
+    image: Heroimg1,
     eyebrow: 'VR PACKAGE  •  SALEM',
     title: 'Premium Corrugated',
     highlight: 'Box Manufacturing',
@@ -33,8 +25,6 @@ const slides = [
   },
   {
     image: Heroimg2,
-    //image:"https://i.ibb.co/XkbJrJLs/Modern-Cardboard-Box-Packaging-Display.png",
-     mobileImage: "https://i.ibb.co/YB578jKx/Kraft-Cardboard-Boxes-in-Studio1.png",
     eyebrow: 'STRENGTH YOU CAN TRUST',
     title: 'Strong & Secure',
     highlight: 'Industrial',
@@ -46,8 +36,6 @@ const slides = [
   },
   {
     image: Heroimg3,
-    //image:"https://i.ibb.co/Cpk46gph/6d953a36-74af-4a0f-a890-e2e21556b71e.png",
-     mobileImage: "https://i.ibb.co/Nnm1TLRt/hero-mobile-3-1.webp",
     eyebrow: 'PACKAGING MADE FOR YOUR BRAND',
     title: 'Custom Printed',
     highlight: 'Corrugated Boxes',
@@ -89,21 +77,7 @@ const Hero = () => {
         }}
       />
 
-      {/* Desktop background */}
-{/* <div
-  className="vr-hero-background vr-hero-desktop"
-  style={{
-    backgroundImage: `url(${currentSlide.image})`,
-  }}
-/>
-
-<div
-  className="vr-hero-background vr-hero-mobile"
-  style={{
-    backgroundImage: `url(${currentSlide.mobileImage})`,
-  }}
-/> */}
-
+ 
       {/* Background overlays */}
       <div className="vr-hero-overlay" />
 
@@ -185,4 +159,4 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export default Hero 

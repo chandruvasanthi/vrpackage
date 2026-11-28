@@ -1,16 +1,5 @@
-
 import './Footer.css'
-
-import {
-  FaInstagram,
-  FaWhatsapp,
-  FaArrowUp,
-  FaMapMarkerAlt,
-  FaPhoneAlt,
-  FaEnvelope,
-  FaChevronRight,
-} from 'react-icons/fa'
-
+import { FaInstagram, FaWhatsapp,FaArrowUp, FaMapMarkerAlt,FaPhoneAlt, FaEnvelope, FaChevronRight } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'
 
@@ -57,9 +46,12 @@ function Footer() {
 
             <a href="/#home" className="footer-logo">
               <img
-                src="https://i.ibb.co/5xYQJVFL/16ec22a5-bc2c-4640-9249-35f514835786.png"
+                
+                src="/images/logo/your-logo.png"
                 alt="VR Package Logo"
                 className="footer-logo-image"
+                loading="eager"
+                decoding="async"
               />
 
               <h2>
